@@ -3,3 +3,24 @@ title: "Bivariate Viz"
 ---
 
 Use this file to generate a professional looking **bivariate** visualization.  The visualization will not perfect the first time but you are expected to improve it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+library(ggplot2)
+```
+
+
+```{r}
+# Load data
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+# Check it out
+head(elections)
+```
+
+```{r,fig.cap="This is a scatter plot of the Republican support in 2020 vs 2016", fig.alt= "This is a scatter plot that shows teh relationship between republican support in 2016 versus 2020"}
+ggplot(elections, aes(x= repub_pct_16, y= repub_pct_20))+
+  geom_point(alpha=0.5)+
+  labs(x = "Republican support in 2016", y = "Republican support in 2020") +
+  ggtitle("Relationship between Republican support in 2016 vs 2020 ") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+

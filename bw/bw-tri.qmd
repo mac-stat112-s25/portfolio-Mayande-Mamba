@@ -3,3 +3,28 @@ title: "Trivariate Viz"
 ---
 
 Use this file to generate a professional looking **trivariate** visualization.  The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+library(ggplot2)
+library(ggridges)
+library(forcats)
+```
+
+
+```{r}
+# Load data
+elections <- read.csv("https://mac-stat.github.io/data/election_2020_county.csv")
+
+# Check it out
+head(elections)
+```
+
+```{r, fig.cap="This is a ridge plot for the percentage of 2020 Republican support by state, according to historical voting patterns", fig.alt= "This is a ridge plot that shows the relationship between the percentage of 2020 republican support by state and based on historical voting patterns" }
+ggplot(elections, aes(x = repub_pct_20, y = fct_reorder(state_abbr, repub_pct_20), fill = historical)) + 
+  geom_density_ridges(alpha = 0.5) + 
+  labs(y = "state", x = "2020 Republican support (%)") + 
+  scale_fill_manual(values = c("blue", "purple", "red")) +
+ggtitle(". % Republican support (2020) per each state according to historical voting patterns") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+  
+```
+

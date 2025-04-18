@@ -3,3 +3,22 @@ title: "Univariate Viz"
 ---
 
 Use this file to generate a professional looking **univariate** visualization. The visualization will not perfect the first time but you are expected to improve on it throughout the semester especially after covering advanced topics such as effective viz.
+```{r}
+library(ggplot2)
+library(forcats) 
+```
+
+
+```{r}
+# Import data
+hikes <- read.csv("https://mac-stat.github.io/data/high_peaks.csv")
+```
+
+```{r,fig.cap="This is a histogram for the elevation variable.", fig.alt= "This histogram shows the count in number of hikes at each elevation in the range of around 3200 to 5500"}
+ggplot(hikes, aes(x = elevation)) +
+  geom_histogram(color = "white", binwidth = 200, fill= "blue") +
+  labs(x = "Elevation (feet)", y = "Number of hikes") +
+  ggtitle("Number of hikes per elevation") +
+  theme(plot.title = element_text(hjust = 0.5, face = "bold"))
+```
+

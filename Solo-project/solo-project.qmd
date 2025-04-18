@@ -1,0 +1,189 @@
+---
+title: "solo-project"
+format: html
+---
+
+```{r}
+# Load the package
+library(rnaturalearth)
+library(rnaturalearthhires)
+library(tidyverse)
+library(leaflet)
+library(sf)
+library(tmap)
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```{r}
+# Get the Data
+
+rainfall <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-01-07/rainfall.csv')
+temperature <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-01-07/temperature.csv')
+
+# IF YOU USE THIS DATA PLEASE BE CAUTIOUS WITH INTERPRETATION
+nasa_fire <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-01-07/MODIS_C6_Australia_and_New_Zealand_7d.csv')
+
+# For JSON File of fires
+url <- "http://www.rfs.nsw.gov.au/feeds/majorIncidents.json"
+
+aus_fires <- sf::st_read(url)
+
+# Or read in with tidytuesdayR package (https://github.com/dslc-io/tidytuesdayR)
+
+# Either ISO-8601 date or year/week works!
+
+# Install via pak::pak("dslc-io/tidytuesdayR")
+
+tuesdata <- tidytuesdayR::tt_load('2020-01-07') 
+tuesdata <- tidytuesdayR::tt_load(2020, week = 2)
+
+
+rainfall <- tuesdata$rainfall
+```
+
+
+
+
+
+```{r}
+# Mapping NSW Current Incidents in R -------------------------------------------
+
+library(sf)
+library(mapview)
+library(tidyverse)
+
+#' Current Incidents Feed (GeoJSON)
+#' This feed contains a list of current incidents from the NSW RFS, 
+#' and includes location data and Major Fire Update summary information where available. 
+#' Click through from the feed to the NSW RFS website for full details of the update. 
+#' GeoJSON is a lightweight data standard that has emerged to support the sharing of 
+#' information with location or geospatial data. 
+#' It is widely supported by modern applications and mobile devices.
+
+url <- "http://www.rfs.nsw.gov.au/feeds/majorIncidents.json"
+
+fires <- st_read(url)
+
+fires
+
+st_geometry_type(fires)
+
+fires <- st_collection_extract(fires, "POINT")
+
+
+mapview(fires)
+
+
+
+
+#' Hacky way to get rid of points within geometry collections
+fire_poly <- fires %>% 
+  st_buffer(dist = 0) %>% 
+  st_union(by_feature = TRUE)
+
+mapview(fire_poly)
+
+fires %>% 
+  mutate(pubdate = as.character(pubDate),
+         pubdate = as.Date(pubdate))
+
+```
+
+
+
+```{r}
+# Get Australian states as polygons
+aus_boundaries <- ne_states(country = "Australia", returnclass = "sf")
+```
+
+
+```{r}
+
+# Ensure fire data is in the same CRS (Coordinate Reference System) as the boundaries
+fires <- st_transform(fires, st_crs(aus_boundaries))
+
+# Perform a spatial join to assign each fire to a region
+fires_by_region <- st_join(aus_boundaries, fires, join = st_intersects)
+
+# Count number of fires per region
+fire_counts <- fires_by_region %>%
+  group_by(name) %>%  # Change to the correct region name column
+  summarise(fire_count = n())%>%
+  st_drop_geometry()  # Removes spatial attributes, making it a regular dataframe
+
+# Merge with the original polygon data
+aus_boundaries <- left_join(aus_boundaries, fire_counts, by = "name")
+
+# Replace NA fire counts with 0
+aus_boundaries$fire_count[is.na(aus_boundaries$fire_count)] <- 0
+
+```
+
+
+```{r}
+tm_shape(aus_boundaries) +
+  tm_polygons("fire_count", style = "jenks", palette = "Reds", title = "Wildfire Incidents") +
+  tm_layout(title = "Choropleth Map of Wildfire Incidents in Australia")
+
+```
+
+
+
+
+
+
+
+
+```{r}
+# Get high-resolution states/territories data for Australia
+australia_states <- ne_states(returnclass = "sf") %>%
+  filter(admin == "Australia")
+
+
+
+# Plot Australia’s states/territories
+ggplot(australia_states) +
+  geom_sf(fill = "lightblue", color = "black") +
+  theme_minimal() +
+  labs(title = "Australia and its States/Territories")
+```
+
+```{r}
+library(rnaturalearth)
+library(sf)
+library(mapview)
+
+# Get admin level 1 (states) just for Australia
+aus_states <- ne_states(country = "Australia", returnclass = "sf")
+
+# View it
+mapview(aus_states)
+
+```
+

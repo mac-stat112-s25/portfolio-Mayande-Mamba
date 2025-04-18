@@ -1,0 +1,80 @@
+---
+title: "Instrumental Variables Worksheet"
+output: html_document
+---
+
+```{r}
+# this generates some fake data for us to experiment with estimating IVs!
+set.seed(123) # setting the seed means we'll all get the same thing
+n <- 1000
+distance <- rnorm(n, mean = 20, sd = 5)
+motivation <- rnorm(n, mean = 100, sd = 15)
+parent.income <- rnorm(n, mean = 60000, sd = 2000)
+
+```
+
+```{r}
+# generate education
+education <- 12 + 
+  (-0.3 * distance) + 
+  (0.05 * motivation) + 
+  (0.00005 * parent.income) +
+  rnorm(n, 0, 1)             
+
+# generate wages
+wages <- 10000 + 
+  (1000 * education) +         
+  (50 * motivation) +  
+  (0.25 * parent.income) +
+  rnorm(n, 0, 1000)           
+
+# put into data frame
+data <- data.frame(
+  wages = wages,
+  education = education,
+  distance = distance,
+  motivation = motivation,
+  parent.income = parent.income
+)
+```
+
+- wages depend on the others
+
+```{r}
+### 1(b) ###
+# true regression
+true.model <- lm(wages ~ education + motivation + parent.income, data = data)
+summary(true.model)
+
+```
+-Note that the estimates are very 
+
+
+```{r}
+#To make a true model available to us we remove motivation which we cannot measure 
+true.model <- lm(wages ~ education + parent.income, data = data)
+summary(true.model)
+```
+
+- Both the predictor variable have less of an effect on the outcome now. This is because motivation is no longer being controlled for and is influencing through error 
+
+```{r}
+### 1(d) ###
+#first stage regression - we care about the education coeefecinet 
+first <- lm(education~ parent.income + distance, data = data)
+summary(first)
+
+
+# get predicted values for education
+data$predict_edu <- predict(first)
+
+```
+-The values of actual education and predicted education have some variation but are relatively close in values 
+
+```{r}
+### 1(e) ###
+second <- lm(wages ~ predict_edu + parent.income, data = data)
+summary(second)
+
+```
+

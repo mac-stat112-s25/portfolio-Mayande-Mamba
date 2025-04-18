@@ -1,0 +1,100 @@
+---
+title: "Exam1"
+format: html
+---
+
+```{r}
+# part 1 Get the Data
+
+food_consumption <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-02-18/food_consumption.csv')
+
+# Or read in with tidytuesdayR package (https://github.com/dslc-io/tidytuesdayR)
+# PLEASE NOTE TO USE 2020 DATA YOU NEED TO USE tidytuesdayR version ? from GitHub
+
+# Either ISO-8601 date or year/week works!
+
+# Install via pak::pak("dslc-io/tidytuesdayR")
+
+
+```
+- Grand Research Question : What does the consumption of each food category in each country look like? 
+
+- part 2 - put the code for installing packages in the console to avoid it being constantly redownloaded
+
+```{r}
+#part 3 
+
+library(tidytuesdayR)
+library(tidyverse)
+
+
+
+```
+- There are 9 packages loaded in teh tidyverse package 
+
+```{r}
+#part 4 
+
+tuesdata <- tidytuesdayR::tt_load('2020-02-18')
+tuesdata <- tidytuesdayR::tt_load(2020, week = 8)
+
+
+fc <- tuesdata$food_consumption
+```
+- The code above gets data from tidytuesday and creates a new data set called fc specifically from food consumption and stores it there
+
+```{r}
+#part 5 
+
+dim(fc) #gives dimension of data set 
+head(fc) # loads first 6 rows 
+tail(fc) #loads last 6 rows
+str(fc) # gives structure of data 
+summarise(fc) # gives a summary of the data
+```
+```{r}
+#part 6 
+head(fc,22)
+tail(fc, 22)
+
+fc |> group_by(food_category) |>
+  summarise(total= n())
+```
+- The units of observation are country + food category . There are 11 food categories for 130 countries
+
+
+
+- Part 7 
+The grand research question involves 3 variables : country by food , food category and consumption 
+
+```{r}
+#Part 7
+
+fc |>
+  select(country, food_category, consumption)
+
+
+
+```
+
+
+- The grand research question involves 3 variables : country, food category and consumption 
+
+
+
+```{r}
+#part 9  - What does the consumption of each food category in each country look like? 
+
+ggplot(fc, aes(x = country, y = consumption, fill = food_category)) +
+  geom_bar(stat = "identity", width = 0.8) +
+  labs(title = "Food Consumption by Category in Each Country",
+       x = "Country",
+       y = "Consumption (kg per capita)",
+       fill = "Food Category") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) # Rotate country names for readability
+
+
+
+```
+
