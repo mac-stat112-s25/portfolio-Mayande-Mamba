@@ -366,12 +366,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">name =</span> <span class="st">"Per Capita Income"</span>) <span class="sc">+</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2020 Election Results by State"</span>, </span>
 <span id="cb4-6"><a href="#cb4-6"></a>       <span class="at">x =</span> <span class="st">"Democratic Percentage (%)"</span>, </span>
-<span id="cb4-7"><a href="#cb4-7"></a>       <span class="at">y =</span> <span class="st">"Republican Percentage (%)"</span>) <span class="sc">+</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">theme</span>(</span>
-<span id="cb4-10"><a href="#cb4-10"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
-<span id="cb4-12"><a href="#cb4-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-7"><a href="#cb4-7"></a>       <span class="at">y =</span> <span class="st">"Republican Percentage (%)"</span>,</span>
+<span id="cb4-8"><a href="#cb4-8"></a>       <span class="at">color =</span> <span class="st">"2020 Winner"</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="fu">theme</span>(</span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb4-13"><a href="#cb4-13"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="bw-quad_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1040,17 +1041,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb5-30"><a href="#cb5-30"></a>  <span class="fu">scale_size_continuous</span>(<span class="at">name =</span> <span class="st">"Per Capita Income"</span>) <span class="sc">+</span></span>
 <span id="cb5-31"><a href="#cb5-31"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"2020 Election Results by State"</span>, </span>
 <span id="cb5-32"><a href="#cb5-32"></a>       <span class="at">x =</span> <span class="st">"Democratic Percentage (%)"</span>, </span>
-<span id="cb5-33"><a href="#cb5-33"></a>       <span class="at">y =</span> <span class="st">"Republican Percentage (%)"</span>) <span class="sc">+</span></span>
-<span id="cb5-34"><a href="#cb5-34"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb5-35"><a href="#cb5-35"></a>  <span class="fu">theme</span>(</span>
-<span id="cb5-36"><a href="#cb5-36"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
-<span id="cb5-37"><a href="#cb5-37"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
-<span id="cb5-38"><a href="#cb5-38"></a>  )</span>
-<span id="cb5-39"><a href="#cb5-39"></a></span>
-<span id="cb5-40"><a href="#cb5-40"></a>  </span>
+<span id="cb5-33"><a href="#cb5-33"></a>       <span class="at">y =</span> <span class="st">"Republican Percentage (%)"</span>,</span>
+<span id="cb5-34"><a href="#cb5-34"></a>       <span class="at">color =</span> <span class="st">"2020 Winner"</span>) <span class="sc">+</span></span>
+<span id="cb5-35"><a href="#cb5-35"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb5-36"><a href="#cb5-36"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-37"><a href="#cb5-37"></a>    <span class="at">legend.position =</span> <span class="st">"right"</span>,</span>
+<span id="cb5-38"><a href="#cb5-38"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)</span>
+<span id="cb5-39"><a href="#cb5-39"></a>  )</span>
+<span id="cb5-40"><a href="#cb5-40"></a></span>
 <span id="cb5-41"><a href="#cb5-41"></a>  </span>
-<span id="cb5-42"><a href="#cb5-42"></a></span>
-<span id="cb5-43"><a href="#cb5-43"></a><span class="in">```</span></span>
+<span id="cb5-42"><a href="#cb5-42"></a>  </span>
+<span id="cb5-43"><a href="#cb5-43"></a></span>
+<span id="cb5-44"><a href="#cb5-44"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
