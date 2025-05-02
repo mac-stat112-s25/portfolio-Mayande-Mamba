@@ -674,7 +674,7 @@
     "href": "summarysheet/visualization.html",
     "title": "\n19  visualization\n",
     "section": "",
-    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/visualization.pdf\")",
+    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/visualization.png\")",
     "crumbs": [
       "SummarySheets",
       "<span class='chapter-number'>19</span>  <span class='chapter-title'>visualization</span>"
