@@ -685,7 +685,7 @@
     "href": "summarysheet/wrangling.html",
     "title": "\n20  Wrangling\n",
     "section": "",
-    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/wrangling.pdf\")",
+    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/wrangling.png\")",
     "crumbs": [
       "SummarySheets",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Wrangling</span>"
