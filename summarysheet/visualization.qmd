@@ -1,9 +1,0 @@
----
-title: "visualization"
-format: html
----
-
-```{r,fig.width=6, fig.height=8}
-knitr::include_graphics("/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/visualization.pdf")
-```
-

@@ -683,12 +683,12 @@
   {
     "objectID": "summarysheet/wrangling.html",
     "href": "summarysheet/wrangling.html",
-    "title": "\n20  Wrangling\n",
+    "title": "\n20  wrangling\n",
     "section": "",
     "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/wrangling.png\")",
     "crumbs": [
       "SummarySheets",
-      "<span class='chapter-number'>20</span>  <span class='chapter-title'>Wrangling</span>"
+      "<span class='chapter-number'>20</span>  <span class='chapter-title'>wrangling</span>"
     ]
   }
 ]
