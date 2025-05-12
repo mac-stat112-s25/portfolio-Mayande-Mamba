@@ -727,9 +727,9 @@
   {
     "objectID": "summarysheet/Visualization.html",
     "href": "summarysheet/Visualization.html",
-    "title": "\n20  Visualization\n",
+    "title": "20  Visualization",
     "section": "",
-    "text": "Code# knitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/images/Visualization.png\")\n\n\n\n\nVisualization",
+    "text": "Visualization",
     "crumbs": [
       "SummarySheets",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Visualization</span>"
@@ -738,9 +738,9 @@
   {
     "objectID": "summarysheet/Wrangling.html",
     "href": "summarysheet/Wrangling.html",
-    "title": "\n21  Wrangling\n",
+    "title": "21  Wrangling",
     "section": "",
-    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/images/Wrangling.png\")",
+    "text": "Wrangling",
     "crumbs": [
       "SummarySheets",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Wrangling</span>"
