@@ -17,7 +17,7 @@ food_consumption <- readr::read_csv('https://raw.githubusercontent.com/rfordatas
 
 
 ```
-- Grand Research Question : What does the consumption of each food category in each country look like? 
+**Grand Research Question : What does the consumption of each food category in each country look like?** 
 
 - part 2 - put the code for installing packages in the console to avoid it being constantly redownloaded
 
