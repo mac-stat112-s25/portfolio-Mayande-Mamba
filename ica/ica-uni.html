@@ -1045,76 +1045,64 @@ Click for Solutions
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="co"># Add a histogram layer</span></span>
 <span id="cb33-2"><a href="#cb33-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
 <span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output-display">
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Outline the bars in white</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="co"># Outline the bars in white</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-2.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Fill the bars in blue</span></span>
-<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="co"># Fill the bars in blue</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-3.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Add axis labels</span></span>
-<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
-</div>
-<div class="cell-output-display">
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a><span class="co"># Add axis labels</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb36-3"><a href="#cb36-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb36-4"><a href="#cb36-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-4.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="co"># Change the width of the bins to 1000 feet</span></span>
-<span id="cb41-2"><a href="#cb41-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">1000</span>) <span class="sc">+</span></span>
-<span id="cb41-4"><a href="#cb41-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="co"># Change the width of the bins to 1000 feet</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">1000</span>) <span class="sc">+</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-5.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="co"># Change the width of the bins to 5 feet</span></span>
-<span id="cb42-2"><a href="#cb42-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb42-3"><a href="#cb42-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb42-4"><a href="#cb42-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a><span class="co"># Change the width of the bins to 5 feet</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-6.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="co"># Change the width of the bins to 200 feet</span></span>
-<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb43-3"><a href="#cb43-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
-<span id="cb43-4"><a href="#cb43-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="co"># Change the width of the bins to 200 feet</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb39-3"><a href="#cb39-3"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-29-7.png" class="img-fluid figure-img" width="672"></p>
@@ -1133,8 +1121,8 @@ Click for Solutions
 <li>we don’t lump enough hikes together and lose track of the bigger picture trends</li>
 </ul></section><section id="exercise-11-density-plots-1" class="level3 unnumbered"><h3 class="unnumbered anchored" data-anchor-id="exercise-11-density-plots-1">Exercise 11: Density plots</h3>
 <div class="cell">
-<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb44-2"><a href="#cb44-2"></a> <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb40-2"><a href="#cb40-2"></a> <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"orange"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details><div class="cell-output-display">
 <div>
 <figure class="figure"><p><img src="ica-uni_files/figure-html/unnamed-chunk-30-1.png" class="img-fluid figure-img" width="672"></p>
@@ -1780,720 +1768,720 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb45" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb45-1"><a href="#cb45-1"></a><span class="co">---</span></span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="an">title:</span><span class="co"> "Univariate Viz"</span></span>
-<span id="cb45-3"><a href="#cb45-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
-<span id="cb45-4"><a href="#cb45-4"></a><span class="co">---</span></span>
-<span id="cb45-5"><a href="#cb45-5"></a></span>
-<span id="cb45-6"><a href="#cb45-6"></a>Use this file for practice with the **univariate viz** in-class activity.  Refer to the class website for details.</span>
-<span id="cb45-7"><a href="#cb45-7"></a></span>
-<span id="cb45-8"><a href="#cb45-8"></a></span>
-<span id="cb45-9"><a href="#cb45-9"></a>::: {.callout-caution title="Learning Goals"}</span>
-<span id="cb45-10"><a href="#cb45-10"></a>**Warm-up (together)**</span>
-<span id="cb45-11"><a href="#cb45-11"></a></span>
-<span id="cb45-12"><a href="#cb45-12"></a><span class="ss">-   </span>Convince ourselves about the importance of data viz.</span>
-<span id="cb45-13"><a href="#cb45-13"></a><span class="ss">-   </span>Explore the "grammar of graphics".</span>
-<span id="cb45-14"><a href="#cb45-14"></a></span>
-<span id="cb45-15"><a href="#cb45-15"></a>**Exercises (in groups)**</span>
-<span id="cb45-16"><a href="#cb45-16"></a></span>
-<span id="cb45-17"><a href="#cb45-17"></a><span class="ss">-   </span>Familiarize yourself with the <span class="in">`ggplot()`</span> structure and grammar.</span>
-<span id="cb45-18"><a href="#cb45-18"></a><span class="ss">-   </span>Build *univariate* viz, i.e. viz for 1 variable at a time.</span>
-<span id="cb45-19"><a href="#cb45-19"></a><span class="ss">-   </span>Start recognizing the different approaches for visualizing categorical vs quantitative variables.</span>
-<span id="cb45-20"><a href="#cb45-20"></a>:::</span>
-<span id="cb45-21"><a href="#cb45-21"></a></span>
-<span id="cb45-22"><a href="#cb45-22"></a></span>
-<span id="cb45-23"><a href="#cb45-23"></a>::: {.callout-note title="Additional Resources"}</span>
-<span id="cb45-24"><a href="#cb45-24"></a></span>
-<span id="cb45-25"><a href="#cb45-25"></a>For more information about the topics covered in this chapter, refer to the resources below:</span>
-<span id="cb45-26"><a href="#cb45-26"></a></span>
-<span id="cb45-27"><a href="#cb45-27"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Intro to ggplot (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=0OtY38LVy-o&amp;list=PLyEH7o09I467e8zck95awweg_bGuLzqjz&amp;index=6)</span> by Lisa Lendway</span>
-<span id="cb45-28"><a href="#cb45-28"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Univariate viz interpreting (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=7zQmWTT_m-Y)</span> by Alicia Johnson--you can ignore the parts about numerical summaries.</span>
-<span id="cb45-29"><a href="#cb45-29"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">A grammar for data graphics (html)</span><span class="co">](https://mdsr-book.github.io/mdsr2e/ch-vizII.html)</span> by Baumer, Kaplan, &amp; Horton</span>
-<span id="cb45-30"><a href="#cb45-30"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Data visualization (html)</span><span class="co">](https://r4ds.hadley.nz/data-visualize.html)</span> by Wickham, Çetinkaya-Rundel, &amp; Grolemund</span>
-<span id="cb45-31"><a href="#cb45-31"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Visualizing distributions (html)</span><span class="co">](https://clauswilke.com/dataviz/histograms-density-plots.html)</span> by Wilke</span>
-<span id="cb45-32"><a href="#cb45-32"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">ggplot cheatsheet (pdf)</span><span class="co">](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)</span></span>
-<span id="cb45-33"><a href="#cb45-33"></a></span>
-<span id="cb45-34"><a href="#cb45-34"></a>:::</span>
-<span id="cb45-35"><a href="#cb45-35"></a></span>
-<span id="cb45-36"><a href="#cb45-36"></a></span>
-<span id="cb45-37"><a href="#cb45-37"></a>::: {.callout-important title="Instructions"}</span>
-<span id="cb45-38"><a href="#cb45-38"></a></span>
-<span id="cb45-39"><a href="#cb45-39"></a>**General**</span>
-<span id="cb45-40"><a href="#cb45-40"></a></span>
-<span id="cb45-41"><a href="#cb45-41"></a><span class="ss">-   </span>Be kind to yourself.</span>
-<span id="cb45-42"><a href="#cb45-42"></a><span class="ss">-   </span>Collaborate with and be kind to others. You are expected to work together as a group.</span>
-<span id="cb45-43"><a href="#cb45-43"></a><span class="ss">-   </span>Ask questions. Remember that we won't discuss these exercises as a class.</span>
-<span id="cb45-44"><a href="#cb45-44"></a></span>
-<span id="cb45-45"><a href="#cb45-45"></a>**Activity Specific**</span>
-<span id="cb45-46"><a href="#cb45-46"></a></span>
-<span id="cb45-47"><a href="#cb45-47"></a></span>
-<span id="cb45-48"><a href="#cb45-48"></a></span>
-<span id="cb45-49"><a href="#cb45-49"></a></span>
-<span id="cb45-50"><a href="#cb45-50"></a>Help each other with the following:</span>
-<span id="cb45-51"><a href="#cb45-51"></a></span>
-<span id="cb45-52"><a href="#cb45-52"></a></span>
-<span id="cb45-53"><a href="#cb45-53"></a><span class="ss">-   </span>Create a new Quarto document in the activities folder of your portfolio project and do not forgot to include it in <span class="in">`_quarto.yml`</span> file.  Then click the <span class="in">`&lt;/&gt; Code`</span> link at the top right corner of this page and copy the code into the created Quarto document.  This is where you'll take notes.  Remember that the portfolio is yours, so take notes in whatever way is best for you.</span>
-<span id="cb45-54"><a href="#cb45-54"></a><span class="ss">-   </span>**Don't start the Exercises section before we get there as a class.** First, engage in class discussion and eventually collaborate with your group on the exercises!</span>
-<span id="cb45-55"><a href="#cb45-55"></a><span class="ss">-   </span>The best way to learn <span class="in">`ggplot`</span> is to just play around. Focus on the *patterns* and *potential* of the code. Don't worry about memorizing anything! You will naturally start to remember the most important / common code the more and more you use it.</span>
-<span id="cb45-56"><a href="#cb45-56"></a></span>
-<span id="cb45-57"><a href="#cb45-57"></a>:::</span>
-<span id="cb45-58"><a href="#cb45-58"></a></span>
-<span id="cb45-59"><a href="#cb45-59"></a><span class="fu">## Background</span></span>
-<span id="cb45-60"><a href="#cb45-60"></a></span>
-<span id="cb45-61"><a href="#cb45-61"></a>We're starting our unit on **data visualization** or **data viz**, thus skipping some steps in the data science workflow.  Mainly, it's tough to understand how our data should be *prepared* before we have a sense of what we want to *do* with this data!</span>
-<span id="cb45-62"><a href="#cb45-62"></a></span>
-<span id="cb45-63"><a href="#cb45-63"></a><span class="al">![](https://mac-stat.github.io/images/112/legos.png)</span>{width="50%"}</span>
-<span id="cb45-64"><a href="#cb45-64"></a></span>
-<span id="cb45-65"><a href="#cb45-65"></a><span class="co">[</span><span class="ot">Source</span><span class="co">](https://www.effectivedatastorytelling.com/post/a-deeper-dive-into-lego-bricks-and-data-stories)</span></span>
-<span id="cb45-66"><a href="#cb45-66"></a></span>
-<span id="cb45-67"><a href="#cb45-67"></a></span>
-<span id="cb45-68"><a href="#cb45-68"></a><span class="fu">## Warm-up</span></span>
-<span id="cb45-69"><a href="#cb45-69"></a></span>
-<span id="cb45-70"><a href="#cb45-70"></a><span class="fu">### The Importance of Visualizations</span></span>
-<span id="cb45-71"><a href="#cb45-71"></a></span>
-<span id="cb45-72"><a href="#cb45-72"></a><span class="fu">#### EXAMPLE 1 {-}</span></span>
-<span id="cb45-73"><a href="#cb45-73"></a></span>
-<span id="cb45-74"><a href="#cb45-74"></a>The data below includes information on hiking trails in the 46 "high peaks" in the Adirondack mountains of Northeastern New York state. This includes data on the hike's highest <span class="in">`elevation`</span> (feet), vertical <span class="in">`ascent`</span> (feet), <span class="in">`length`</span> (miles), <span class="in">`time`</span> in hours that it takes to complete, and difficulty <span class="in">`rating`</span>. Open this data in a viewer, through the Environment tab or by typing <span class="in">`View(hikes)`</span> in the *console*.</span>
-<span id="cb45-75"><a href="#cb45-75"></a></span>
-<span id="cb45-78"><a href="#cb45-78"></a><span class="in">```{r}</span></span>
-<span id="cb45-79"><a href="#cb45-79"></a><span class="co"># Import data</span></span>
-<span id="cb45-80"><a href="#cb45-80"></a>hikes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/high_peaks.csv"</span>)</span>
-<span id="cb45-81"><a href="#cb45-81"></a><span class="in">```</span></span>
-<span id="cb45-82"><a href="#cb45-82"></a></span>
-<span id="cb45-83"><a href="#cb45-83"></a>::: {.callout-warning title="Discussion"}</span>
-<span id="cb45-84"><a href="#cb45-84"></a></span>
-<span id="cb45-85"><a href="#cb45-85"></a><span class="ss">1. </span>What is the pattern / trend of <span class="in">`elevation`</span> of hiking trails?</span>
-<span id="cb45-86"><a href="#cb45-86"></a><span class="ss">2. </span>What is the relationship between a hike's <span class="in">`elevation`</span> and typical <span class="in">`time`</span> it takes to summit / reach the top?</span>
-<span id="cb45-87"><a href="#cb45-87"></a></span>
-<span id="cb45-88"><a href="#cb45-88"></a>:::</span>
-<span id="cb45-89"><a href="#cb45-89"></a></span>
-<span id="cb45-90"><a href="#cb45-90"></a></span>
-<span id="cb45-91"><a href="#cb45-91"></a><span class="fu">#### EXAMPLE 2 {-}</span></span>
-<span id="cb45-92"><a href="#cb45-92"></a></span>
-<span id="cb45-93"><a href="#cb45-93"></a>Look at the plot below taken from a story reported by <span class="co">[</span><span class="ot">this New York Times article (html)</span><span class="co">](https://www.nytimes.com/2024/01/09/climate/2023-warmest-year-record.html)</span>.</span>
-<span id="cb45-94"><a href="#cb45-94"></a></span>
-<span id="cb45-95"><a href="#cb45-95"></a>::: {.callout-warning title="Discussion"}</span>
-<span id="cb45-96"><a href="#cb45-96"></a></span>
-<span id="cb45-97"><a href="#cb45-97"></a>Suppose that the article tried telling the story *without* using data viz, What would that story be like?</span>
-<span id="cb45-98"><a href="#cb45-98"></a></span>
-<span id="cb45-99"><a href="#cb45-99"></a>:::</span>
-<span id="cb45-100"><a href="#cb45-100"></a></span>
-<span id="cb45-101"><a href="#cb45-101"></a><span class="al">![](https://mac-stat.github.io/images/112/nyt_temperature_viz.png)</span></span>
-<span id="cb45-102"><a href="#cb45-102"></a></span>
-<span id="cb45-103"><a href="#cb45-103"></a></span>
-<span id="cb45-104"><a href="#cb45-104"></a><span class="fu">#### Benefits of Visualization {-}</span></span>
-<span id="cb45-105"><a href="#cb45-105"></a></span>
-<span id="cb45-106"><a href="#cb45-106"></a><span class="ss">-   </span>Understand what we're working with from</span>
-<span id="cb45-107"><a href="#cb45-107"></a><span class="ss">    -   </span>scales &amp; typical outcomes, to</span>
-<span id="cb45-108"><a href="#cb45-108"></a><span class="ss">    -   </span>outliers, i.e. unusual cases, to</span>
-<span id="cb45-109"><a href="#cb45-109"></a><span class="ss">    -   </span>patterns &amp; relationships</span>
-<span id="cb45-110"><a href="#cb45-110"></a><span class="ss">-   </span>Refine research questions &amp; inform next steps of our analysis.</span>
-<span id="cb45-111"><a href="#cb45-111"></a><span class="ss">-   </span>Communicate our findings and tell a story.</span>
-<span id="cb45-112"><a href="#cb45-112"></a></span>
-<span id="cb45-113"><a href="#cb45-113"></a></span>
-<span id="cb45-114"><a href="#cb45-114"></a><span class="fu">### Components of data graphics</span></span>
-<span id="cb45-115"><a href="#cb45-115"></a></span>
-<span id="cb45-116"><a href="#cb45-116"></a><span class="fu">#### EXAMPLE 3 {-}</span></span>
-<span id="cb45-117"><a href="#cb45-117"></a></span>
-<span id="cb45-118"><a href="#cb45-118"></a>Data viz is the process of *mapping* data to different plot components. For example, in the NYT example above, the research team *mapped* data like the following (but with many more rows!) to the plot:</span>
-<span id="cb45-119"><a href="#cb45-119"></a></span>
-<span id="cb45-120"><a href="#cb45-120"></a>| observation | decade  | year | date | relative temp |</span>
-<span id="cb45-121"><a href="#cb45-121"></a>|:------------|:-------:|:----:|:----:|:-------------:|</span>
-<span id="cb45-122"><a href="#cb45-122"></a>| 1           | 2020-30 | 2023 | 1/23 |      1.2      |</span>
-<span id="cb45-123"><a href="#cb45-123"></a>| 2           | 1940-60 | 1945 | 3/45 |     -0.05     |</span>
-<span id="cb45-124"><a href="#cb45-124"></a></span>
-<span id="cb45-125"><a href="#cb45-125"></a>::: {.callout-warning title="Discussion"}</span>
-<span id="cb45-126"><a href="#cb45-126"></a></span>
-<span id="cb45-127"><a href="#cb45-127"></a>Write down step-by-step directions for using a data table like the one above to create the temperature visualization. A computer is your audience, thus be as precise as possible, but trust that the computer can find the exact numbers if you tell it where.</span>
-<span id="cb45-128"><a href="#cb45-128"></a></span>
-<span id="cb45-129"><a href="#cb45-129"></a>:::</span>
-<span id="cb45-130"><a href="#cb45-130"></a></span>
-<span id="cb45-131"><a href="#cb45-131"></a></span>
-<span id="cb45-132"><a href="#cb45-132"></a><span class="fu">#### COMPONENTS OF GRAPHICS {-}</span></span>
-<span id="cb45-133"><a href="#cb45-133"></a></span>
-<span id="cb45-134"><a href="#cb45-134"></a>In data viz, we essentially start with a blank canvas and then map data onto it. There are multiple possible *mapping components*. Some basics from <span class="co">[</span><span class="ot">Wickham</span><span class="co">](https://ggplot2-book.org/introduction)</span> (which goes into more depth):</span>
-<span id="cb45-135"><a href="#cb45-135"></a></span>
-<span id="cb45-136"><a href="#cb45-136"></a><span class="ss">-   </span>**a frame, or coordinate system**\</span>
-<span id="cb45-137"><a href="#cb45-137"></a>    The variables or features that define the axes and gridlines of the canvas.</span>
-<span id="cb45-138"><a href="#cb45-138"></a></span>
-<span id="cb45-139"><a href="#cb45-139"></a><span class="ss">-   </span>**a layer**\</span>
-<span id="cb45-140"><a href="#cb45-140"></a>    The geometric elements (e.g. lines, points) we add to the canvas to represent either the data points themselves or patterns among the data points. Each type of geometric element is a separate layer. These geometric elements are sometimes called "geoms" or "glyphs" (like *heiroglyph*!)</span>
-<span id="cb45-141"><a href="#cb45-141"></a></span>
-<span id="cb45-142"><a href="#cb45-142"></a><span class="ss">-   </span>**scales**\</span>
-<span id="cb45-143"><a href="#cb45-143"></a>    The aesthetics we might add to geometric elements (e.g. color, size, shape) to incorporate additional information about data scales or groups.</span>
-<span id="cb45-144"><a href="#cb45-144"></a></span>
-<span id="cb45-145"><a href="#cb45-145"></a><span class="ss">-   </span>**faceting**\</span>
-<span id="cb45-146"><a href="#cb45-146"></a>    The splitting up of the data into multiple subplots, or facets, to examine different groups within the data.</span>
-<span id="cb45-147"><a href="#cb45-147"></a></span>
-<span id="cb45-148"><a href="#cb45-148"></a><span class="ss">-   </span>**a theme**\</span>
-<span id="cb45-149"><a href="#cb45-149"></a>    Additional controls on the "finer points" of the plot aesthetics, (e.g. font type, background, color scheme).</span>
-<span id="cb45-150"><a href="#cb45-150"></a></span>
-<span id="cb45-151"><a href="#cb45-151"></a></span>
-<span id="cb45-152"><a href="#cb45-152"></a></span>
-<span id="cb45-153"><a href="#cb45-153"></a><span class="fu">#### EXAMPLE {-}</span></span>
-<span id="cb45-154"><a href="#cb45-154"></a></span>
-<span id="cb45-155"><a href="#cb45-155"></a>In the NYT graphic, the data was mapped to the plot as follows:</span>
-<span id="cb45-156"><a href="#cb45-156"></a></span>
-<span id="cb45-157"><a href="#cb45-157"></a><span class="ss">-   </span>**frame**: x-axis = date, y-axis = temp</span>
-<span id="cb45-158"><a href="#cb45-158"></a><span class="ss">-   </span>**layers:** add one line per year, add dots for each month in 2023</span>
-<span id="cb45-159"><a href="#cb45-159"></a><span class="ss">-   </span>**scales:** color each line by decade</span>
-<span id="cb45-160"><a href="#cb45-160"></a><span class="ss">-   </span>**faceting:** none</span>
-<span id="cb45-161"><a href="#cb45-161"></a><span class="ss">-   </span>**a theme:** NYT style</span>
-<span id="cb45-162"><a href="#cb45-162"></a></span>
-<span id="cb45-163"><a href="#cb45-163"></a></span>
-<span id="cb45-164"><a href="#cb45-164"></a><span class="fu">### ggplot + R packages</span></span>
-<span id="cb45-165"><a href="#cb45-165"></a></span>
-<span id="cb45-166"><a href="#cb45-166"></a>We will use the powerful <span class="in">`ggplot`</span> tools in R to build (most of) our viz. The <span class="in">`gg`</span> here is short for the **"grammar of graphics"**. These tools are developed in a way that:</span>
-<span id="cb45-167"><a href="#cb45-167"></a></span>
-<span id="cb45-168"><a href="#cb45-168"></a><span class="ss">-   </span>recognizes that code is communication (it has a grammar!)</span>
-<span id="cb45-169"><a href="#cb45-169"></a><span class="ss">-   </span>connects code to the components / philosophy of data viz</span>
-<span id="cb45-170"><a href="#cb45-170"></a></span>
-<span id="cb45-171"><a href="#cb45-171"></a></span>
-<span id="cb45-172"><a href="#cb45-172"></a></span>
-<span id="cb45-173"><a href="#cb45-173"></a><span class="fu">#### EXAMPLES: ggplot in the News {-}</span></span>
-<span id="cb45-174"><a href="#cb45-174"></a></span>
-<span id="cb45-175"><a href="#cb45-175"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">MPR journalist David Montgomery</span><span class="co">](http://dhmontgomery.com/portfolio/)</span>: <span class="co">[</span><span class="ot">R data viz</span><span class="co">](https://github.com/dhmontgomery/personal-work/tree/master/theme-mpr)</span></span>
-<span id="cb45-176"><a href="#cb45-176"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">BBC R data viz</span><span class="co">](https://bbc.github.io/rcookbook/)</span></span>
-<span id="cb45-177"><a href="#cb45-177"></a></span>
-<span id="cb45-178"><a href="#cb45-178"></a></span>
-<span id="cb45-179"><a href="#cb45-179"></a>To use these tools, we must first get them into R/RStudio! Recall that R is *open source*. Anybody can build R tools and share them through special R **packages**. The **tidyverse package** compiles a set of individual packages, including <span class="in">`ggplot2`</span>, that share a common grammar and structure. Though the learning curve can be steep, this grammar is intuitive and generalizable once mastered. Image source: <span class="co">[</span><span class="ot">Posit BBC on X</span><span class="co">](https://twitter.com/posit_pbc/status/1145592633823244289)</span></span>
-<span id="cb45-180"><a href="#cb45-180"></a></span>
-<span id="cb45-181"><a href="#cb45-181"></a><span class="al">![](https://mac-stat.github.io/images/112/tidyverse.png)</span>{width="50%"}</span>
-<span id="cb45-182"><a href="#cb45-182"></a></span>
-<span id="cb45-183"><a href="#cb45-183"></a>Follow the directions below to *install* this package, the directions depending upon whether or not you're working on Mac's server. Unless the authors of a package add updates, you only need to do this once all semester. To install:</span>
-<span id="cb45-184"><a href="#cb45-184"></a></span>
-<span id="cb45-185"><a href="#cb45-185"></a><span class="ss">-   </span>**If you're working on Mac's RStudio server**\</span>
-<span id="cb45-186"><a href="#cb45-186"></a>    <span class="in">`tidyverse`</span> is already installed on the server! Check this 2 ways.</span>
-<span id="cb45-187"><a href="#cb45-187"></a><span class="ss">    -   </span>Type <span class="in">`library(tidyverse)`</span> in your console. If you don't get an error, it's installed!</span>
-<span id="cb45-188"><a href="#cb45-188"></a><span class="ss">    -   </span>Check that it appears in the list under the "Packages" tab (bottom right pane).</span>
-<span id="cb45-189"><a href="#cb45-189"></a><span class="ss">-   </span>**If you're working with a desktop version of R/RStudio**\</span>
-<span id="cb45-190"><a href="#cb45-190"></a>    In the "Packages" tab (bottom right pane), click "Install". From there type the name of the package (<span class="in">`tidyverse`</span>), make sure the "Install dependencies" box is checked, and click "Install".</span>
-<span id="cb45-191"><a href="#cb45-191"></a></span>
-<span id="cb45-192"><a href="#cb45-192"></a></span>
-<span id="cb45-193"><a href="#cb45-193"></a><span class="fu">## Exercises</span></span>
-<span id="cb45-194"><a href="#cb45-194"></a></span>
-<span id="cb45-195"><a href="#cb45-195"></a></span>
-<span id="cb45-196"><a href="#cb45-196"></a></span>
-<span id="cb45-197"><a href="#cb45-197"></a><span class="fu">### Exercise 1: Research Questions {.unnumbered}</span></span>
-<span id="cb45-198"><a href="#cb45-198"></a></span>
-<span id="cb45-199"><a href="#cb45-199"></a>Let's dig into the <span class="in">`hikes`</span> data, starting with the <span class="in">`elevation`</span> and difficulty <span class="in">`ratings`</span> of the hikes:</span>
-<span id="cb45-200"><a href="#cb45-200"></a></span>
-<span id="cb45-203"><a href="#cb45-203"></a><span class="in">```{r}</span></span>
-<span id="cb45-204"><a href="#cb45-204"></a><span class="fu">head</span>(hikes)</span>
-<span id="cb45-205"><a href="#cb45-205"></a><span class="in">```</span></span>
-<span id="cb45-206"><a href="#cb45-206"></a></span>
-<span id="cb45-207"><a href="#cb45-207"></a>a.  What features would we like a visualization of the *categorical* difficulty <span class="in">`rating`</span> variable to capture?</span>
-<span id="cb45-208"><a href="#cb45-208"></a>b.  What about a visualization of the *quantitative* <span class="in">`elevation`</span> variable?</span>
-<span id="cb45-209"><a href="#cb45-209"></a></span>
-<span id="cb45-210"><a href="#cb45-210"></a></span>
-<span id="cb45-211"><a href="#cb45-211"></a></span>
-<span id="cb45-212"><a href="#cb45-212"></a><span class="fu">### Exercise 2: Load tidyverse {.unnumbered}</span></span>
-<span id="cb45-213"><a href="#cb45-213"></a></span>
-<span id="cb45-214"><a href="#cb45-214"></a>We'll address the above questions using <span class="in">`ggplot`</span> tools. Try running the following chunk and simply take note of the error message -- this is one you'll get a lot!</span>
-<span id="cb45-215"><a href="#cb45-215"></a></span>
-<span id="cb45-216"><a href="#cb45-216"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-217"><a href="#cb45-217"></a><span class="in"># Use the ggplot function</span></span>
-<span id="cb45-218"><a href="#cb45-218"></a><span class="in">ggplot(hikes, aes(x = rating))</span></span>
-<span id="cb45-219"><a href="#cb45-219"></a><span class="in">```</span></span>
-<span id="cb45-220"><a href="#cb45-220"></a></span>
-<span id="cb45-221"><a href="#cb45-221"></a>In order to use <span class="in">`ggplot`</span> tools, we have to first *load* the `tidyverse` package in which they live. Mainly, we've *installed* the package but need to tell R when we want to *use* it. Run the chunk below to load the library. You'll need to do this within any .qmd file that uses <span class="in">`ggplot()`</span>.</span>
-<span id="cb45-222"><a href="#cb45-222"></a></span>
-<span id="cb45-223"><a href="#cb45-223"></a><span class="in">```{r message=FALSE}</span></span>
-<span id="cb45-224"><a href="#cb45-224"></a><span class="in"># Load the package</span></span>
-<span id="cb45-225"><a href="#cb45-225"></a><span class="in">library(tidyverse)</span></span>
-<span id="cb45-226"><a href="#cb45-226"></a><span class="in">```</span></span>
-<span id="cb45-227"><a href="#cb45-227"></a></span>
-<span id="cb45-228"><a href="#cb45-228"></a></span>
-<span id="cb45-229"><a href="#cb45-229"></a></span>
-<span id="cb45-230"><a href="#cb45-230"></a><span class="fu">### Exercise 3: Bar Chart of Ratings - Part 1 {.unnumbered}</span></span>
-<span id="cb45-231"><a href="#cb45-231"></a></span>
-<span id="cb45-232"><a href="#cb45-232"></a>Consider some specific research questions about the difficulty <span class="in">`rating`</span> of the hikes:</span>
-<span id="cb45-233"><a href="#cb45-233"></a></span>
-<span id="cb45-234"><a href="#cb45-234"></a><span class="ss">1. </span>How many hikes fall into each category?</span>
-<span id="cb45-235"><a href="#cb45-235"></a><span class="ss">2. </span>Are the hikes evenly distributed among these categories, or are some more common than others?</span>
-<span id="cb45-236"><a href="#cb45-236"></a></span>
-<span id="cb45-237"><a href="#cb45-237"></a>All of these questions can be answered with: (1) a **bar chart**; of (2) the *categorical* data recorded in the `rating` column. First, set up the plotting **frame**:</span>
-<span id="cb45-238"><a href="#cb45-238"></a></span>
-<span id="cb45-239"><a href="#cb45-239"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-240"><a href="#cb45-240"></a><span class="in">ggplot(hikes, aes(x = rating))</span></span>
-<span id="cb45-241"><a href="#cb45-241"></a><span class="in">```</span></span>
-<span id="cb45-242"><a href="#cb45-242"></a></span>
-<span id="cb45-243"><a href="#cb45-243"></a>Think about:</span>
-<span id="cb45-244"><a href="#cb45-244"></a></span>
-<span id="cb45-245"><a href="#cb45-245"></a><span class="ss">-   </span>What did this do? What do you observe?</span>
-<span id="cb45-246"><a href="#cb45-246"></a><span class="ss">-   </span>What, in general, is the first argument of the <span class="in">`ggplot()`</span> function?The data</span>
-<span id="cb45-247"><a href="#cb45-247"></a><span class="ss">-   </span>What is the purpose of writing <span class="in">`x = rating`</span>?</span>
-<span id="cb45-248"><a href="#cb45-248"></a><span class="ss">-   </span>What do you think <span class="in">`aes`</span> stands for?!?</span>
-<span id="cb45-249"><a href="#cb45-249"></a></span>
-<span id="cb45-250"><a href="#cb45-250"></a></span>
-<span id="cb45-251"><a href="#cb45-251"></a><span class="fu">### Exercise 4: Bar Chart of Ratings - Part 2 {.unnumbered}</span></span>
-<span id="cb45-252"><a href="#cb45-252"></a></span>
-<span id="cb45-253"><a href="#cb45-253"></a>Now let's add a **geometric layer** to the frame / canvas, and start customizing the plot's **theme**. To this end, try each chunk below, *one by one*. In each chunk, make a comment about how both the code and the corresponding plot both changed.</span>
-<span id="cb45-254"><a href="#cb45-254"></a></span>
-<span id="cb45-255"><a href="#cb45-255"></a>NOTE:</span>
-<span id="cb45-256"><a href="#cb45-256"></a></span>
-<span id="cb45-257"><a href="#cb45-257"></a><span class="ss">-   </span>Pay attention to the general code properties and structure, not memorization.</span>
-<span id="cb45-258"><a href="#cb45-258"></a><span class="ss">-   </span>Not all of these are "good" plots. We're just exploring <span class="in">`ggplot`</span>.</span>
-<span id="cb45-259"><a href="#cb45-259"></a></span>
-<span id="cb45-260"><a href="#cb45-260"></a></span>
-<span id="cb45-261"><a href="#cb45-261"></a></span>
-<span id="cb45-262"><a href="#cb45-262"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-263"><a href="#cb45-263"></a><span class="in"># Make a bar graph</span></span>
-<span id="cb45-264"><a href="#cb45-264"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
-<span id="cb45-265"><a href="#cb45-265"></a><span class="in">  geom_bar()</span></span>
-<span id="cb45-266"><a href="#cb45-266"></a><span class="in">```</span></span>
-<span id="cb45-267"><a href="#cb45-267"></a></span>
-<span id="cb45-268"><a href="#cb45-268"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-269"><a href="#cb45-269"></a><span class="in">#Label x an y axis</span></span>
-<span id="cb45-270"><a href="#cb45-270"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
-<span id="cb45-271"><a href="#cb45-271"></a><span class="in">  geom_bar() +</span></span>
-<span id="cb45-272"><a href="#cb45-272"></a><span class="in">  labs(x = "Rating", y = "Number of hikes")</span></span>
-<span id="cb45-273"><a href="#cb45-273"></a><span class="in">```</span></span>
-<span id="cb45-274"><a href="#cb45-274"></a></span>
-<span id="cb45-275"><a href="#cb45-275"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-276"><a href="#cb45-276"></a><span class="in"># Add a color or fill the bar graph</span></span>
-<span id="cb45-277"><a href="#cb45-277"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
-<span id="cb45-278"><a href="#cb45-278"></a><span class="in">  geom_bar(fill = "blue") +</span></span>
-<span id="cb45-279"><a href="#cb45-279"></a><span class="in">  labs(x = "Rating", y = "Number of hikes")</span></span>
-<span id="cb45-280"><a href="#cb45-280"></a><span class="in">```</span></span>
-<span id="cb45-281"><a href="#cb45-281"></a></span>
-<span id="cb45-282"><a href="#cb45-282"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-283"><a href="#cb45-283"></a><span class="in"># Makes the boundaries orange </span></span>
-<span id="cb45-284"><a href="#cb45-284"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
-<span id="cb45-285"><a href="#cb45-285"></a><span class="in">  geom_bar(color = "orange", fill = "blue") +</span></span>
-<span id="cb45-286"><a href="#cb45-286"></a><span class="in">  labs(x = "Rating", y = "Number of hikes")</span></span>
-<span id="cb45-287"><a href="#cb45-287"></a><span class="in">```</span></span>
-<span id="cb45-288"><a href="#cb45-288"></a></span>
-<span id="cb45-289"><a href="#cb45-289"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-290"><a href="#cb45-290"></a><span class="in"># Changes the theme of the graph </span></span>
-<span id="cb45-291"><a href="#cb45-291"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
-<span id="cb45-292"><a href="#cb45-292"></a><span class="in">  geom_bar(color = "orange", fill = "blue")  +</span></span>
-<span id="cb45-293"><a href="#cb45-293"></a><span class="in">  labs(x = "Rating", y = "Number of hikes") +</span></span>
-<span id="cb45-294"><a href="#cb45-294"></a><span class="in">  theme_minimal()</span></span>
-<span id="cb45-295"><a href="#cb45-295"></a><span class="in">```</span></span>
-<span id="cb45-296"><a href="#cb45-296"></a></span>
-<span id="cb45-297"><a href="#cb45-297"></a></span>
-<span id="cb45-298"><a href="#cb45-298"></a></span>
-<span id="cb45-299"><a href="#cb45-299"></a><span class="fu">### Exercise 5: Bar Chart Follow-up {.unnumbered}</span></span>
-<span id="cb45-300"><a href="#cb45-300"></a></span>
-<span id="cb45-301"><a href="#cb45-301"></a><span class="fu">#### Part a {.unnumbered}</span></span>
-<span id="cb45-302"><a href="#cb45-302"></a></span>
-<span id="cb45-303"><a href="#cb45-303"></a>Reflect on the <span class="in">`ggplot()`</span> code.</span>
-<span id="cb45-304"><a href="#cb45-304"></a></span>
-<span id="cb45-305"><a href="#cb45-305"></a><span class="ss">-   </span>What's the purpose of the <span class="in">`+`</span>? When do we use it?- Use it to add a new command </span>
-<span id="cb45-306"><a href="#cb45-306"></a></span>
-<span id="cb45-307"><a href="#cb45-307"></a><span class="ss">-   </span>We added the bars using <span class="in">`geom_bar()`</span>? Why "geom"?- Use it to add a bar graph </span>
-<span id="cb45-308"><a href="#cb45-308"></a></span>
-<span id="cb45-309"><a href="#cb45-309"></a><span class="ss">-   </span>What does <span class="in">`labs()`</span> stand for? - Use it to add the axis or dimensions </span>
-<span id="cb45-310"><a href="#cb45-310"></a></span>
-<span id="cb45-311"><a href="#cb45-311"></a><span class="ss">-   </span>What's the difference between <span class="in">`color`</span> and <span class="in">`fill`</span>? - color changes boundaries and fill fills in the bar graph</span>
-<span id="cb45-312"><a href="#cb45-312"></a></span>
-<span id="cb45-313"><a href="#cb45-313"></a><span class="fu">#### Part b {.unnumbered}</span></span>
-<span id="cb45-314"><a href="#cb45-314"></a></span>
-<span id="cb45-315"><a href="#cb45-315"></a>In general, bar charts allow us to examine the following properties of a *categorical* variable:</span>
-<span id="cb45-316"><a href="#cb45-316"></a></span>
-<span id="cb45-317"><a href="#cb45-317"></a><span class="ss">-   </span>**observed categories**: What categories did we observe?</span>
-<span id="cb45-318"><a href="#cb45-318"></a></span>
-<span id="cb45-319"><a href="#cb45-319"></a><span class="ss">- </span>difficult</span>
-<span id="cb45-320"><a href="#cb45-320"></a></span>
-<span id="cb45-321"><a href="#cb45-321"></a><span class="ss">- </span>easy</span>
-<span id="cb45-322"><a href="#cb45-322"></a></span>
-<span id="cb45-323"><a href="#cb45-323"></a><span class="ss">- </span>moderate</span>
-<span id="cb45-324"><a href="#cb45-324"></a></span>
-<span id="cb45-325"><a href="#cb45-325"></a><span class="ss">-   </span>**variability between categories**: Are observations evenly spread out among the categories, or are some categories more common than others? </span>
-<span id="cb45-326"><a href="#cb45-326"></a></span>
-<span id="cb45-327"><a href="#cb45-327"></a><span class="ss">- </span>Some categories are more common than others </span>
-<span id="cb45-328"><a href="#cb45-328"></a></span>
-<span id="cb45-329"><a href="#cb45-329"></a>We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Summarize below what you learned from the bar chart, in context.</span>
-<span id="cb45-330"><a href="#cb45-330"></a></span>
-<span id="cb45-331"><a href="#cb45-331"></a><span class="ss">- </span>Most hikes in the Adirondacks are moderate in rating and the only a few hikes are difficult in the given data</span>
-<span id="cb45-332"><a href="#cb45-332"></a></span>
-<span id="cb45-333"><a href="#cb45-333"></a><span class="fu">#### Part c {.unnumbered}</span></span>
-<span id="cb45-334"><a href="#cb45-334"></a></span>
-<span id="cb45-335"><a href="#cb45-335"></a>Is there anything you don't like about this barplot? For example: check out the x-axis again.</span>
-<span id="cb45-336"><a href="#cb45-336"></a></span>
-<span id="cb45-337"><a href="#cb45-337"></a>The categories are not orderd by difficulty</span>
-<span id="cb45-338"><a href="#cb45-338"></a></span>
-<span id="cb45-339"><a href="#cb45-339"></a><span class="fu">### Exercise 6: Sad Bar Chart {.unnumbered}</span></span>
-<span id="cb45-340"><a href="#cb45-340"></a></span>
-<span id="cb45-341"><a href="#cb45-341"></a>Let's now consider some research questions related to the *quantitative* <span class="in">`elevation`</span> variable:</span>
-<span id="cb45-342"><a href="#cb45-342"></a></span>
-<span id="cb45-343"><a href="#cb45-343"></a><span class="ss">1. </span>Among the hikes, what's the *range* of elevation and how are the hikes *distributed* within this range (e.g. evenly, in clumps, "normally")?</span>
-<span id="cb45-344"><a href="#cb45-344"></a>It is ordered in clumps </span>
-<span id="cb45-345"><a href="#cb45-345"></a></span>
-<span id="cb45-346"><a href="#cb45-346"></a></span>
-<span id="cb45-347"><a href="#cb45-347"></a></span>
-<span id="cb45-348"><a href="#cb45-348"></a><span class="ss">2. </span>What's a *typical* elevation?</span>
-<span id="cb45-349"><a href="#cb45-349"></a></span>
-<span id="cb45-350"><a href="#cb45-350"></a><span class="ss">3. </span>Are there any *outliers*, i.e. hikes that have unusually high or low elevations?</span>
-<span id="cb45-351"><a href="#cb45-351"></a></span>
-<span id="cb45-352"><a href="#cb45-352"></a>Here:</span>
-<span id="cb45-353"><a href="#cb45-353"></a></span>
-<span id="cb45-354"><a href="#cb45-354"></a><span class="ss">-   </span>Construct a **bar chart** of the *quantitative* <span class="in">`elevation`</span> variable.</span>
-<span id="cb45-355"><a href="#cb45-355"></a><span class="ss">-   </span>Explain why this might *not* be an effective visualization for this and other quantitative variables. (What questions does / doesn't it help answer?) </span>
-<span id="cb45-356"><a href="#cb45-356"></a></span>
-<span id="cb45-357"><a href="#cb45-357"></a><span class="ss">- </span>Each x value would be its own category and it would be too many</span>
-<span id="cb45-358"><a href="#cb45-358"></a></span>
-<span id="cb45-361"><a href="#cb45-361"></a><span class="in">```{r}</span></span>
-<span id="cb45-362"><a href="#cb45-362"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-363"><a href="#cb45-363"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>)  <span class="sc">+</span></span>
-<span id="cb45-364"><a href="#cb45-364"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>) <span class="sc">+</span></span>
-<span id="cb45-365"><a href="#cb45-365"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb45-366"><a href="#cb45-366"></a><span class="in">```</span></span>
-<span id="cb45-367"><a href="#cb45-367"></a></span>
-<span id="cb45-368"><a href="#cb45-368"></a></span>
-<span id="cb45-369"><a href="#cb45-369"></a></span>
-<span id="cb45-370"><a href="#cb45-370"></a><span class="fu">### Exercise 7: A Histogram of Elevation {.unnumbered}</span></span>
-<span id="cb45-371"><a href="#cb45-371"></a></span>
-<span id="cb45-372"><a href="#cb45-372"></a>Quantitative variables require different viz than categorical variables. Especially when there are many possible outcomes of the quantitative variable. It's typically insufficient to simply count up the number of times we've observed a particular outcome as the bar graph did above. It gives us a sense of ranges and typical outcomes, but not a good sense of how the observations are distributed across this range. We'll explore two methods for graphing quantitative variables: **histograms** and **density plots**.</span>
-<span id="cb45-373"><a href="#cb45-373"></a></span>
-<span id="cb45-374"><a href="#cb45-374"></a>**Histograms** are constructed by (1) dividing up the observed range of the variable into 'bins' of equal width; and (2) counting up the number of cases that fall into each bin. Check out the example below:</span>
-<span id="cb45-375"><a href="#cb45-375"></a></span>
-<span id="cb45-376"><a href="#cb45-376"></a><span class="al">![](https://mac-stat.github.io/images/112/histogram_demo.png)</span>{width="50%"}</span>
-<span id="cb45-377"><a href="#cb45-377"></a></span>
-<span id="cb45-378"><a href="#cb45-378"></a><span class="fu">#### Part a {.unnumbered}</span></span>
-<span id="cb45-379"><a href="#cb45-379"></a></span>
-<span id="cb45-380"><a href="#cb45-380"></a>Let's dig into some details.</span>
-<span id="cb45-381"><a href="#cb45-381"></a></span>
-<span id="cb45-382"><a href="#cb45-382"></a><span class="ss">-   </span>How many hikes have an elevation between 4500 and 4700 feet?</span>
-<span id="cb45-383"><a href="#cb45-383"></a><span class="ss">- </span>6</span>
-<span id="cb45-384"><a href="#cb45-384"></a></span>
-<span id="cb45-385"><a href="#cb45-385"></a><span class="ss">-   </span>How many total hikes have an elevation of at least 5100 feet?</span>
-<span id="cb45-386"><a href="#cb45-386"></a></span>
-<span id="cb45-387"><a href="#cb45-387"></a><span class="ss">- </span>1+1 = 2</span>
-<span id="cb45-388"><a href="#cb45-388"></a></span>
-<span id="cb45-389"><a href="#cb45-389"></a><span class="fu">#### Part b {.unnumbered}</span></span>
-<span id="cb45-390"><a href="#cb45-390"></a></span>
-<span id="cb45-391"><a href="#cb45-391"></a>Now the bigger picture. In general, histograms allow us to examine the following properties of a *quantitative* variable:</span>
-<span id="cb45-392"><a href="#cb45-392"></a></span>
-<span id="cb45-393"><a href="#cb45-393"></a><span class="ss">-   </span>**typical outcome:** Where’s the center of the data points? What's typical?</span>
-<span id="cb45-394"><a href="#cb45-394"></a><span class="ss">-   </span>**variability &amp; range:** How spread out are the outcomes? What are the max and min outcomes?</span>
-<span id="cb45-395"><a href="#cb45-395"></a><span class="ss">-   </span>**shape:** How are values distributed along the observed range? Is the distribution symmetric, right-skewed, left-skewed, bi-modal, or uniform (flat)?</span>
-<span id="cb45-396"><a href="#cb45-396"></a><span class="ss">-   </span>**outliers:** Are there any outliers, i.e. outcomes that are unusually large/small?</span>
-<span id="cb45-397"><a href="#cb45-397"></a></span>
-<span id="cb45-398"><a href="#cb45-398"></a>We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Addressing each of the features in the above list, summarize below what you learned from the histogram, in context.</span>
-<span id="cb45-399"><a href="#cb45-399"></a></span>
-<span id="cb45-400"><a href="#cb45-400"></a></span>
-<span id="cb45-401"><a href="#cb45-401"></a></span>
-<span id="cb45-402"><a href="#cb45-402"></a><span class="fu">### Exercise 8: Building Histograms - Part 1 {.unnumbered}</span></span>
-<span id="cb45-403"><a href="#cb45-403"></a></span>
-<span id="cb45-404"><a href="#cb45-404"></a>2-MINUTE CHALLENGE: Thinking of the bar chart code, try to *intuit* what line you can tack on to the below frame of `elevation` to add a histogram layer. Don't forget a `+`. If it doesn't come to you within 2 minutes, *no problem* -- all will be revealed in the next exercise.</span>
-<span id="cb45-405"><a href="#cb45-405"></a></span>
-<span id="cb45-406"><a href="#cb45-406"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-407"><a href="#cb45-407"></a><span class="in">ggplot(hikes, aes(x = elevation))+</span></span>
-<span id="cb45-408"><a href="#cb45-408"></a><span class="in">  geom_histogram(color= "black", fill = "blue")</span></span>
-<span id="cb45-409"><a href="#cb45-409"></a></span>
-<span id="cb45-410"><a href="#cb45-410"></a><span class="in">```</span></span>
-<span id="cb45-411"><a href="#cb45-411"></a></span>
-<span id="cb45-412"><a href="#cb45-412"></a></span>
-<span id="cb45-413"><a href="#cb45-413"></a><span class="fu">### Exercise 9: Building Histograms - Part 2 {.unnumbered}</span></span>
-<span id="cb45-414"><a href="#cb45-414"></a></span>
-<span id="cb45-415"><a href="#cb45-415"></a>Let's build some histograms. Try each chunk below, *one by one*. In each chunk, make a comment about how both the code and the corresponding plot both changed.</span>
-<span id="cb45-416"><a href="#cb45-416"></a></span>
-<span id="cb45-417"><a href="#cb45-417"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-418"><a href="#cb45-418"></a><span class="in"># makes a histogram</span></span>
-<span id="cb45-419"><a href="#cb45-419"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-420"><a href="#cb45-420"></a><span class="in">  geom_histogram()</span></span>
-<span id="cb45-421"><a href="#cb45-421"></a><span class="in">```</span></span>
-<span id="cb45-422"><a href="#cb45-422"></a></span>
-<span id="cb45-423"><a href="#cb45-423"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-424"><a href="#cb45-424"></a><span class="in"># makes the outline white </span></span>
-<span id="cb45-425"><a href="#cb45-425"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-426"><a href="#cb45-426"></a><span class="in">  geom_histogram(color = "white") </span></span>
-<span id="cb45-427"><a href="#cb45-427"></a><span class="in">```</span></span>
-<span id="cb45-428"><a href="#cb45-428"></a></span>
-<span id="cb45-429"><a href="#cb45-429"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-430"><a href="#cb45-430"></a><span class="in"># Fills in the bars with blue </span></span>
-<span id="cb45-431"><a href="#cb45-431"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-432"><a href="#cb45-432"></a><span class="in">  geom_histogram(color = "white", fill = "blue") </span></span>
-<span id="cb45-433"><a href="#cb45-433"></a><span class="in">```</span></span>
-<span id="cb45-434"><a href="#cb45-434"></a></span>
-<span id="cb45-435"><a href="#cb45-435"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-436"><a href="#cb45-436"></a><span class="in"># Labels the axis </span></span>
-<span id="cb45-437"><a href="#cb45-437"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-438"><a href="#cb45-438"></a><span class="in">  geom_histogram(color = "white") +</span></span>
-<span id="cb45-439"><a href="#cb45-439"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
-<span id="cb45-440"><a href="#cb45-440"></a><span class="in">```</span></span>
-<span id="cb45-441"><a href="#cb45-441"></a></span>
-<span id="cb45-442"><a href="#cb45-442"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-443"><a href="#cb45-443"></a><span class="in"># Increases the size of the "containers/bins" to include the numbers in </span></span>
-<span id="cb45-444"><a href="#cb45-444"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-445"><a href="#cb45-445"></a><span class="in">  geom_histogram(color = "white", binwidth = 1000) +</span></span>
-<span id="cb45-446"><a href="#cb45-446"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
-<span id="cb45-447"><a href="#cb45-447"></a><span class="in">```</span></span>
-<span id="cb45-448"><a href="#cb45-448"></a></span>
-<span id="cb45-449"><a href="#cb45-449"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-450"><a href="#cb45-450"></a><span class="in"># reduce the size of the bins</span></span>
-<span id="cb45-451"><a href="#cb45-451"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-452"><a href="#cb45-452"></a><span class="in">  geom_histogram(color = "white", binwidth = 5) +</span></span>
-<span id="cb45-453"><a href="#cb45-453"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
-<span id="cb45-454"><a href="#cb45-454"></a><span class="in">```</span></span>
-<span id="cb45-455"><a href="#cb45-455"></a></span>
-<span id="cb45-456"><a href="#cb45-456"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-457"><a href="#cb45-457"></a><span class="in"># Change size of bins to 200</span></span>
-<span id="cb45-458"><a href="#cb45-458"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-459"><a href="#cb45-459"></a><span class="in">  geom_histogram(color = "white", binwidth = 200) +</span></span>
-<span id="cb45-460"><a href="#cb45-460"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
-<span id="cb45-461"><a href="#cb45-461"></a><span class="in">```</span></span>
-<span id="cb45-462"><a href="#cb45-462"></a></span>
-<span id="cb45-463"><a href="#cb45-463"></a></span>
-<span id="cb45-464"><a href="#cb45-464"></a><span class="fu">### Exercise 10: Histogram Follow-up {.unnumbered}</span></span>
-<span id="cb45-465"><a href="#cb45-465"></a></span>
-<span id="cb45-466"><a href="#cb45-466"></a><span class="ss">-   </span>What function added the histogram layer / geometry?</span>
-<span id="cb45-467"><a href="#cb45-467"></a><span class="ss">-   </span>What's the difference between <span class="in">`color`</span> and <span class="in">`fill`</span>?</span>
-<span id="cb45-468"><a href="#cb45-468"></a><span class="ss">-   </span>Why does adding <span class="in">`color = "white"`</span> improve the visualization?</span>
-<span id="cb45-469"><a href="#cb45-469"></a><span class="ss">-   </span>What did <span class="in">`binwidth`</span> do?</span>
-<span id="cb45-470"><a href="#cb45-470"></a><span class="ss">-   </span>Why does the histogram become ineffective if the <span class="in">`binwidth`</span> is too big (e.g. 1000 feet)?</span>
-<span id="cb45-471"><a href="#cb45-471"></a><span class="ss">-   </span>Why does the histogram become ineffective if the <span class="in">`binwidth`</span> is too small (e.g. 5 feet)?</span>
-<span id="cb45-472"><a href="#cb45-472"></a></span>
-<span id="cb45-473"><a href="#cb45-473"></a></span>
-<span id="cb45-474"><a href="#cb45-474"></a><span class="fu">### Exercise 11: Density Plots {.unnumbered}</span></span>
-<span id="cb45-475"><a href="#cb45-475"></a></span>
-<span id="cb45-476"><a href="#cb45-476"></a>**Density plots** are essentially smooth versions of the histogram. Instead of sorting observations into discrete bins, the "density" of observations is calculated across the entire range of outcomes. The greater the number of observations, the greater the density! The density is then scaled so that the area under the density curve **always equals 1** and the area under any fraction of the curve represents the fraction of cases that lie in that range.</span>
-<span id="cb45-477"><a href="#cb45-477"></a></span>
-<span id="cb45-478"><a href="#cb45-478"></a>Check out a density plot of elevation. Notice that the y-axis (density) has no contextual interpretation -- it's a relative measure. The *higher* the density, the more *common* are elevations in that range.</span>
-<span id="cb45-479"><a href="#cb45-479"></a></span>
-<span id="cb45-480"><a href="#cb45-480"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-481"><a href="#cb45-481"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-482"><a href="#cb45-482"></a><span class="in">  geom_density()</span></span>
-<span id="cb45-483"><a href="#cb45-483"></a><span class="in">```</span></span>
-<span id="cb45-484"><a href="#cb45-484"></a></span>
-<span id="cb45-485"><a href="#cb45-485"></a>**Questions**</span>
-<span id="cb45-486"><a href="#cb45-486"></a></span>
-<span id="cb45-487"><a href="#cb45-487"></a><span class="ss">-   </span>INTUITION CHECK: Before tweaking the code and thinking back to <span class="in">`geom_bar()`</span> and <span class="in">`geom_histogram()`</span>, how do you *anticipate* the following code will change the plot?</span>
-<span id="cb45-488"><a href="#cb45-488"></a></span>
-<span id="cb45-489"><a href="#cb45-489"></a><span class="ss">    -   </span><span class="in">`geom_density(color = "blue")`</span></span>
-<span id="cb45-490"><a href="#cb45-490"></a><span class="ss">    -   </span><span class="in">`geom_density(fill = "orange")`</span></span>
-<span id="cb45-491"><a href="#cb45-491"></a></span>
-<span id="cb45-492"><a href="#cb45-492"></a><span class="ss">-   </span>TRY IT! Test out those lines in the chunk below. Was your intuition correct?</span>
-<span id="cb45-493"><a href="#cb45-493"></a></span>
-<span id="cb45-496"><a href="#cb45-496"></a><span class="in">```{r}</span></span>
-<span id="cb45-497"><a href="#cb45-497"></a><span class="in">```</span></span>
-<span id="cb45-498"><a href="#cb45-498"></a></span>
-<span id="cb45-499"><a href="#cb45-499"></a><span class="ss">-   </span>Examine the density plot. How does it compare to the histogram? What does it tell you about the *typical* elevation, *variability / range* in elevations, and *shape* of the distribution of *elevations* within this range?</span>
-<span id="cb45-500"><a href="#cb45-500"></a></span>
-<span id="cb45-501"><a href="#cb45-501"></a></span>
-<span id="cb45-502"><a href="#cb45-502"></a></span>
-<span id="cb45-503"><a href="#cb45-503"></a><span class="fu">### Exercise 12: Density Plots vs Histograms {.unnumbered}</span></span>
-<span id="cb45-504"><a href="#cb45-504"></a></span>
-<span id="cb45-505"><a href="#cb45-505"></a>The histogram and density plot both allow us to visualize the behavior of a quantitative variable: typical outcome, variability / range, shape, and outliers. What are the pros/cons of each? What do you like/not like about each?</span>
-<span id="cb45-506"><a href="#cb45-506"></a></span>
-<span id="cb45-507"><a href="#cb45-507"></a></span>
-<span id="cb45-508"><a href="#cb45-508"></a><span class="fu">### Exercise 13: Code = communication {.unnumbered}</span></span>
-<span id="cb45-509"><a href="#cb45-509"></a></span>
-<span id="cb45-510"><a href="#cb45-510"></a>We *obviously* won't be done until we talk about communication. All code above has a similar *general* structure (where the details can change):</span>
-<span id="cb45-511"><a href="#cb45-511"></a></span>
-<span id="cb45-512"><a href="#cb45-512"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-513"><a href="#cb45-513"></a><span class="in">ggplot(___, aes(x = ___)) + </span></span>
-<span id="cb45-514"><a href="#cb45-514"></a><span class="in">  geom___(color = "___", fill = "___") + </span></span>
-<span id="cb45-515"><a href="#cb45-515"></a><span class="in">  labs(x = "___", y = "___")</span></span>
-<span id="cb45-516"><a href="#cb45-516"></a><span class="in">```</span></span>
-<span id="cb45-517"><a href="#cb45-517"></a></span>
-<span id="cb45-518"><a href="#cb45-518"></a><span class="ss">-   </span>Though not *necessary* to the code working, it's common, good practice to *indent* or *tab* the lines of code after the first line (counterexample below). Why?</span>
-<span id="cb45-519"><a href="#cb45-519"></a></span>
-<span id="cb45-520"><a href="#cb45-520"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-521"><a href="#cb45-521"></a><span class="in"># YUCK</span></span>
-<span id="cb45-522"><a href="#cb45-522"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
-<span id="cb45-523"><a href="#cb45-523"></a><span class="in">geom_histogram(color = "white", binwidth = 200) +</span></span>
-<span id="cb45-524"><a href="#cb45-524"></a><span class="in">labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
-<span id="cb45-525"><a href="#cb45-525"></a><span class="in">```</span></span>
-<span id="cb45-526"><a href="#cb45-526"></a></span>
-<span id="cb45-527"><a href="#cb45-527"></a><span class="ss">-   </span>Though not *necessary* to the code working, it's common, good practice to put a *line break* after each <span class="in">`+`</span> (counterexample below). Why?</span>
-<span id="cb45-528"><a href="#cb45-528"></a></span>
-<span id="cb45-529"><a href="#cb45-529"></a><span class="in">```{r eval = FALSE}</span></span>
-<span id="cb45-530"><a href="#cb45-530"></a><span class="in"># YUCK </span></span>
-<span id="cb45-531"><a href="#cb45-531"></a><span class="in">ggplot(hikes, aes(x = elevation)) + geom_histogram(color = "white", binwidth = 200) + labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
-<span id="cb45-532"><a href="#cb45-532"></a><span class="in">```</span></span>
-<span id="cb45-533"><a href="#cb45-533"></a></span>
-<span id="cb45-534"><a href="#cb45-534"></a></span>
-<span id="cb45-535"><a href="#cb45-535"></a><span class="fu">### Exercise 14: Practice {.unnumbered}</span></span>
-<span id="cb45-536"><a href="#cb45-536"></a></span>
-<span id="cb45-537"><a href="#cb45-537"></a><span class="fu">#### Part a {.unnumbered}</span></span>
-<span id="cb45-538"><a href="#cb45-538"></a></span>
-<span id="cb45-539"><a href="#cb45-539"></a>Practice your viz skills to learn about some of the variables in one of the following datasets from the previous class:</span>
-<span id="cb45-540"><a href="#cb45-540"></a></span>
-<span id="cb45-543"><a href="#cb45-543"></a><span class="in">```{r}</span></span>
-<span id="cb45-544"><a href="#cb45-544"></a><span class="co"># Data on students in this class</span></span>
-<span id="cb45-545"><a href="#cb45-545"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://ajohns24.github.io/data/112/about_us_2024.csv"</span>)</span>
-<span id="cb45-546"><a href="#cb45-546"></a></span>
-<span id="cb45-547"><a href="#cb45-547"></a><span class="co"># World Cup data</span></span>
-<span id="cb45-548"><a href="#cb45-548"></a>world_cup <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv"</span>)</span>
-<span id="cb45-549"><a href="#cb45-549"></a><span class="in">```</span></span>
-<span id="cb45-550"><a href="#cb45-550"></a></span>
-<span id="cb45-551"><a href="#cb45-551"></a><span class="fu">#### Part b {.unnumbered}</span></span>
-<span id="cb45-552"><a href="#cb45-552"></a></span>
-<span id="cb45-553"><a href="#cb45-553"></a>Check out the <span class="co">[</span><span class="ot">RStudio Data Visualization cheat sheet</span><span class="co">](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)</span> to learn more features of <span class="in">`ggplot`</span>.</span>
-<span id="cb45-554"><a href="#cb45-554"></a></span>
-<span id="cb45-555"><a href="#cb45-555"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
-<span id="cb45-556"><a href="#cb45-556"></a>When done, don't forgot to click **Render Book** and check the resulting HTML files. If happy, jump to GitHub Desktop and commit the changes with the message **Finish activity 3** and push to GitHub.  Wait few seconds, then visit your portfolio website and make sure the changes are there.</span>
-<span id="cb45-557"><a href="#cb45-557"></a>:::</span>
-<span id="cb45-558"><a href="#cb45-558"></a></span>
-<span id="cb45-559"><a href="#cb45-559"></a><span class="fu">## Solutions</span></span>
-<span id="cb45-560"><a href="#cb45-560"></a></span>
-<span id="cb45-561"><a href="#cb45-561"></a>&lt;details&gt;</span>
-<span id="cb45-562"><a href="#cb45-562"></a></span>
-<span id="cb45-563"><a href="#cb45-563"></a>&lt;summary&gt;Click for Solutions&lt;/summary&gt;</span>
-<span id="cb45-564"><a href="#cb45-564"></a></span>
-<span id="cb45-565"><a href="#cb45-565"></a><span class="fu">### Exercise 1: Research Questions {.unnumbered}</span></span>
-<span id="cb45-566"><a href="#cb45-566"></a></span>
-<span id="cb45-567"><a href="#cb45-567"></a>a.  For example: how many hikes are there in each category? are any categories more common than others?</span>
-<span id="cb45-568"><a href="#cb45-568"></a>b.  For example: What's a typical elevation? What's the range in elevations?</span>
-<span id="cb45-569"><a href="#cb45-569"></a></span>
-<span id="cb45-570"><a href="#cb45-570"></a></span>
-<span id="cb45-571"><a href="#cb45-571"></a></span>
-<span id="cb45-572"><a href="#cb45-572"></a><span class="fu">### Exercise 3: Bar Chart of Ratings - Part 1 {.unnumbered}</span></span>
-<span id="cb45-573"><a href="#cb45-573"></a></span>
-<span id="cb45-576"><a href="#cb45-576"></a><span class="in">```{r}</span></span>
-<span id="cb45-577"><a href="#cb45-577"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating))</span>
-<span id="cb45-578"><a href="#cb45-578"></a><span class="in">```</span></span>
-<span id="cb45-579"><a href="#cb45-579"></a></span>
-<span id="cb45-580"><a href="#cb45-580"></a><span class="ss">-   </span>just a blank canvas</span>
-<span id="cb45-581"><a href="#cb45-581"></a><span class="ss">-   </span>name of the dataset</span>
-<span id="cb45-582"><a href="#cb45-582"></a><span class="ss">-   </span>indicate which variable to plot on x-axis</span>
-<span id="cb45-583"><a href="#cb45-583"></a><span class="ss">-   </span><span class="in">`aes`</span>thetics</span>
-<span id="cb45-584"><a href="#cb45-584"></a></span>
-<span id="cb45-585"><a href="#cb45-585"></a></span>
-<span id="cb45-586"><a href="#cb45-586"></a></span>
-<span id="cb45-587"><a href="#cb45-587"></a><span class="fu">### Exercise 4: Bar Chart of Ratings - Part 2 {.unnumbered}</span></span>
-<span id="cb45-588"><a href="#cb45-588"></a></span>
-<span id="cb45-591"><a href="#cb45-591"></a><span class="in">```{r}</span></span>
-<span id="cb45-592"><a href="#cb45-592"></a><span class="co"># Add a bar plot LAYER</span></span>
-<span id="cb45-593"><a href="#cb45-593"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
-<span id="cb45-594"><a href="#cb45-594"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb45-595"><a href="#cb45-595"></a></span>
-<span id="cb45-596"><a href="#cb45-596"></a><span class="co"># Add meaningful axis labels</span></span>
-<span id="cb45-597"><a href="#cb45-597"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
-<span id="cb45-598"><a href="#cb45-598"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
-<span id="cb45-599"><a href="#cb45-599"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-600"><a href="#cb45-600"></a></span>
-<span id="cb45-601"><a href="#cb45-601"></a><span class="co"># FILL the bars with blue</span></span>
-<span id="cb45-602"><a href="#cb45-602"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
-<span id="cb45-603"><a href="#cb45-603"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb45-604"><a href="#cb45-604"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-605"><a href="#cb45-605"></a></span>
-<span id="cb45-606"><a href="#cb45-606"></a><span class="co"># COLOR the outline of the bars in orange</span></span>
-<span id="cb45-607"><a href="#cb45-607"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
-<span id="cb45-608"><a href="#cb45-608"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb45-609"><a href="#cb45-609"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-610"><a href="#cb45-610"></a></span>
-<span id="cb45-611"><a href="#cb45-611"></a><span class="co"># Change the theme to a white background</span></span>
-<span id="cb45-612"><a href="#cb45-612"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
-<span id="cb45-613"><a href="#cb45-613"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>)  <span class="sc">+</span></span>
-<span id="cb45-614"><a href="#cb45-614"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>) <span class="sc">+</span> </span>
-<span id="cb45-615"><a href="#cb45-615"></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb45-616"><a href="#cb45-616"></a><span class="in">```</span></span>
-<span id="cb45-617"><a href="#cb45-617"></a></span>
-<span id="cb45-618"><a href="#cb45-618"></a></span>
-<span id="cb45-619"><a href="#cb45-619"></a><span class="fu">### Exercise 5: Bar Chart Follow-up {.unnumbered}</span></span>
-<span id="cb45-620"><a href="#cb45-620"></a></span>
-<span id="cb45-621"><a href="#cb45-621"></a><span class="fu">#### Part a {.unnumbered}</span></span>
-<span id="cb45-622"><a href="#cb45-622"></a></span>
-<span id="cb45-623"><a href="#cb45-623"></a><span class="ss">-   </span>To indicate we're still adding layers to / modifying our plot.</span>
-<span id="cb45-624"><a href="#cb45-624"></a><span class="ss">-   </span>Bars are the <span class="in">`geom`</span>etric elements we're adding in this layer.</span>
-<span id="cb45-625"><a href="#cb45-625"></a><span class="ss">-   </span>labels</span>
-<span id="cb45-626"><a href="#cb45-626"></a><span class="ss">-   </span><span class="in">`fill`</span> fills in the bars. <span class="in">`color`</span> outlines the bars.</span>
-<span id="cb45-627"><a href="#cb45-627"></a></span>
-<span id="cb45-628"><a href="#cb45-628"></a><span class="fu">#### Part b {.unnumbered}</span></span>
-<span id="cb45-629"><a href="#cb45-629"></a></span>
-<span id="cb45-630"><a href="#cb45-630"></a>Most hikes are moderate, the fewest number are difficult.</span>
-<span id="cb45-631"><a href="#cb45-631"></a></span>
-<span id="cb45-632"><a href="#cb45-632"></a><span class="fu">#### Part c {.unnumbered}</span></span>
-<span id="cb45-633"><a href="#cb45-633"></a></span>
-<span id="cb45-634"><a href="#cb45-634"></a>I don't like that the categories are alphabetical, not in order of difficulty level.</span>
-<span id="cb45-635"><a href="#cb45-635"></a></span>
-<span id="cb45-636"><a href="#cb45-636"></a></span>
-<span id="cb45-637"><a href="#cb45-637"></a></span>
-<span id="cb45-638"><a href="#cb45-638"></a><span class="fu">### Exercise 6: Sad Bar Chart {.unnumbered}</span></span>
-<span id="cb45-639"><a href="#cb45-639"></a></span>
-<span id="cb45-640"><a href="#cb45-640"></a>There are too many different outcomes of elevation.</span>
-<span id="cb45-641"><a href="#cb45-641"></a></span>
-<span id="cb45-644"><a href="#cb45-644"></a><span class="in">```{r}</span></span>
-<span id="cb45-645"><a href="#cb45-645"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span> </span>
-<span id="cb45-646"><a href="#cb45-646"></a>  <span class="fu">geom_bar</span>()</span>
-<span id="cb45-647"><a href="#cb45-647"></a><span class="in">```</span></span>
-<span id="cb45-648"><a href="#cb45-648"></a></span>
-<span id="cb45-649"><a href="#cb45-649"></a></span>
-<span id="cb45-650"><a href="#cb45-650"></a></span>
-<span id="cb45-651"><a href="#cb45-651"></a><span class="fu">### Exercise 7: A Histogram of Elevation {.unnumbered}</span></span>
-<span id="cb45-652"><a href="#cb45-652"></a></span>
-<span id="cb45-653"><a href="#cb45-653"></a><span class="fu">#### Part a {.unnumbered}</span></span>
-<span id="cb45-654"><a href="#cb45-654"></a></span>
-<span id="cb45-655"><a href="#cb45-655"></a><span class="ss">-   </span>6</span>
-<span id="cb45-656"><a href="#cb45-656"></a><span class="ss">-   </span>1 + 1 = 2</span>
-<span id="cb45-657"><a href="#cb45-657"></a></span>
-<span id="cb45-658"><a href="#cb45-658"></a><span class="fu">#### Part b {.unnumbered}</span></span>
-<span id="cb45-659"><a href="#cb45-659"></a></span>
-<span id="cb45-660"><a href="#cb45-660"></a>Elevations range from roughly 3700 to 5500 feet. Elevations vary from hike to hike relatively *normally* (with a bell shape) around a typical elevation of roughly 4500 feet.</span>
-<span id="cb45-661"><a href="#cb45-661"></a></span>
-<span id="cb45-662"><a href="#cb45-662"></a></span>
-<span id="cb45-663"><a href="#cb45-663"></a></span>
-<span id="cb45-664"><a href="#cb45-664"></a><span class="fu">### Exercise 9: Building Histograms - Part 2 {.unnumbered}</span></span>
-<span id="cb45-665"><a href="#cb45-665"></a></span>
-<span id="cb45-668"><a href="#cb45-668"></a><span class="in">```{r}</span></span>
-<span id="cb45-669"><a href="#cb45-669"></a><span class="co"># Add a histogram layer</span></span>
-<span id="cb45-670"><a href="#cb45-670"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-671"><a href="#cb45-671"></a>  <span class="fu">geom_histogram</span>()</span>
-<span id="cb45-672"><a href="#cb45-672"></a></span>
-<span id="cb45-673"><a href="#cb45-673"></a><span class="co"># Outline the bars in white</span></span>
-<span id="cb45-674"><a href="#cb45-674"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-675"><a href="#cb45-675"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) </span>
-<span id="cb45-676"><a href="#cb45-676"></a></span>
-<span id="cb45-677"><a href="#cb45-677"></a><span class="co"># Fill the bars in blue</span></span>
-<span id="cb45-678"><a href="#cb45-678"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-679"><a href="#cb45-679"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) </span>
-<span id="cb45-680"><a href="#cb45-680"></a></span>
-<span id="cb45-681"><a href="#cb45-681"></a><span class="co"># Add axis labels</span></span>
-<span id="cb45-682"><a href="#cb45-682"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-683"><a href="#cb45-683"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb45-684"><a href="#cb45-684"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-685"><a href="#cb45-685"></a></span>
-<span id="cb45-686"><a href="#cb45-686"></a><span class="co"># Change the width of the bins to 1000 feet</span></span>
-<span id="cb45-687"><a href="#cb45-687"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-688"><a href="#cb45-688"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">1000</span>) <span class="sc">+</span></span>
-<span id="cb45-689"><a href="#cb45-689"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-690"><a href="#cb45-690"></a></span>
-<span id="cb45-691"><a href="#cb45-691"></a><span class="co"># Change the width of the bins to 5 feet</span></span>
-<span id="cb45-692"><a href="#cb45-692"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-693"><a href="#cb45-693"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb45-694"><a href="#cb45-694"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-695"><a href="#cb45-695"></a></span>
-<span id="cb45-696"><a href="#cb45-696"></a><span class="co"># Change the width of the bins to 200 feet</span></span>
-<span id="cb45-697"><a href="#cb45-697"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-698"><a href="#cb45-698"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
-<span id="cb45-699"><a href="#cb45-699"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
-<span id="cb45-700"><a href="#cb45-700"></a><span class="in">```</span></span>
-<span id="cb45-701"><a href="#cb45-701"></a></span>
-<span id="cb45-702"><a href="#cb45-702"></a></span>
-<span id="cb45-703"><a href="#cb45-703"></a><span class="fu">### Exercise 10: Histogram Follow-up {.unnumbered}</span></span>
-<span id="cb45-704"><a href="#cb45-704"></a></span>
-<span id="cb45-705"><a href="#cb45-705"></a><span class="ss">-   </span><span class="in">`geom_histogram()`</span></span>
-<span id="cb45-706"><a href="#cb45-706"></a><span class="ss">-   </span><span class="in">`color`</span> outlined the bars and <span class="in">`fill`</span> filled them</span>
-<span id="cb45-707"><a href="#cb45-707"></a><span class="ss">-   </span>easier to distinguish between the bars</span>
-<span id="cb45-708"><a href="#cb45-708"></a><span class="ss">-   </span>changed the bin width</span>
-<span id="cb45-709"><a href="#cb45-709"></a><span class="ss">-   </span>we lump too many hikes together and lose track of the nuances</span>
-<span id="cb45-710"><a href="#cb45-710"></a><span class="ss">-   </span>we don't lump enough hikes together and lose track of the bigger picture trends</span>
-<span id="cb45-711"><a href="#cb45-711"></a></span>
-<span id="cb45-712"><a href="#cb45-712"></a></span>
-<span id="cb45-713"><a href="#cb45-713"></a><span class="fu">### Exercise 11: Density plots {.unnumbered}</span></span>
-<span id="cb45-714"><a href="#cb45-714"></a></span>
-<span id="cb45-717"><a href="#cb45-717"></a><span class="in">```{r}</span></span>
-<span id="cb45-718"><a href="#cb45-718"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
-<span id="cb45-719"><a href="#cb45-719"></a> <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"orange"</span>)</span>
-<span id="cb45-720"><a href="#cb45-720"></a><span class="in">```</span></span>
-<span id="cb45-721"><a href="#cb45-721"></a></span>
-<span id="cb45-722"><a href="#cb45-722"></a></span>
-<span id="cb45-723"><a href="#cb45-723"></a><span class="fu">### Exercise 13: Code = Communication {.unnumbered}</span></span>
-<span id="cb45-724"><a href="#cb45-724"></a></span>
-<span id="cb45-725"><a href="#cb45-725"></a><span class="ss">-   </span>Clarifies that the subsequent lines are a continuation of the first. That is, we're not done with the plot yet. These lines are all part of the same idea.</span>
-<span id="cb45-726"><a href="#cb45-726"></a><span class="ss">-   </span>This is like a run-on sentence. It's tough to track the distinct steps that go into building the plot.</span>
-<span id="cb45-727"><a href="#cb45-727"></a></span>
-<span id="cb45-728"><a href="#cb45-728"></a></span>
-<span id="cb45-729"><a href="#cb45-729"></a>&lt;/details&gt;</span>
-<span id="cb45-730"><a href="#cb45-730"></a></span>
-<span id="cb45-731"><a href="#cb45-731"></a></span>
-<span id="cb45-732"><a href="#cb45-732"></a></span>
-<span id="cb45-733"><a href="#cb45-733"></a></span>
-<span id="cb45-734"><a href="#cb45-734"></a></span>
+<div class="sourceCode" id="cb41" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb41-1"><a href="#cb41-1"></a><span class="co">---</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a><span class="an">title:</span><span class="co"> "Univariate Viz"</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a><span class="an">number-sections:</span><span class="co"> true</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a><span class="co">---</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a></span>
+<span id="cb41-6"><a href="#cb41-6"></a>Use this file for practice with the **univariate viz** in-class activity.  Refer to the class website for details.</span>
+<span id="cb41-7"><a href="#cb41-7"></a></span>
+<span id="cb41-8"><a href="#cb41-8"></a></span>
+<span id="cb41-9"><a href="#cb41-9"></a>::: {.callout-caution title="Learning Goals"}</span>
+<span id="cb41-10"><a href="#cb41-10"></a>**Warm-up (together)**</span>
+<span id="cb41-11"><a href="#cb41-11"></a></span>
+<span id="cb41-12"><a href="#cb41-12"></a><span class="ss">-   </span>Convince ourselves about the importance of data viz.</span>
+<span id="cb41-13"><a href="#cb41-13"></a><span class="ss">-   </span>Explore the "grammar of graphics".</span>
+<span id="cb41-14"><a href="#cb41-14"></a></span>
+<span id="cb41-15"><a href="#cb41-15"></a>**Exercises (in groups)**</span>
+<span id="cb41-16"><a href="#cb41-16"></a></span>
+<span id="cb41-17"><a href="#cb41-17"></a><span class="ss">-   </span>Familiarize yourself with the <span class="in">`ggplot()`</span> structure and grammar.</span>
+<span id="cb41-18"><a href="#cb41-18"></a><span class="ss">-   </span>Build *univariate* viz, i.e. viz for 1 variable at a time.</span>
+<span id="cb41-19"><a href="#cb41-19"></a><span class="ss">-   </span>Start recognizing the different approaches for visualizing categorical vs quantitative variables.</span>
+<span id="cb41-20"><a href="#cb41-20"></a>:::</span>
+<span id="cb41-21"><a href="#cb41-21"></a></span>
+<span id="cb41-22"><a href="#cb41-22"></a></span>
+<span id="cb41-23"><a href="#cb41-23"></a>::: {.callout-note title="Additional Resources"}</span>
+<span id="cb41-24"><a href="#cb41-24"></a></span>
+<span id="cb41-25"><a href="#cb41-25"></a>For more information about the topics covered in this chapter, refer to the resources below:</span>
+<span id="cb41-26"><a href="#cb41-26"></a></span>
+<span id="cb41-27"><a href="#cb41-27"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Intro to ggplot (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=0OtY38LVy-o&amp;list=PLyEH7o09I467e8zck95awweg_bGuLzqjz&amp;index=6)</span> by Lisa Lendway</span>
+<span id="cb41-28"><a href="#cb41-28"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Univariate viz interpreting (YouTube)</span><span class="co">](https://www.youtube.com/watch?v=7zQmWTT_m-Y)</span> by Alicia Johnson--you can ignore the parts about numerical summaries.</span>
+<span id="cb41-29"><a href="#cb41-29"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">A grammar for data graphics (html)</span><span class="co">](https://mdsr-book.github.io/mdsr2e/ch-vizII.html)</span> by Baumer, Kaplan, &amp; Horton</span>
+<span id="cb41-30"><a href="#cb41-30"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Data visualization (html)</span><span class="co">](https://r4ds.hadley.nz/data-visualize.html)</span> by Wickham, Çetinkaya-Rundel, &amp; Grolemund</span>
+<span id="cb41-31"><a href="#cb41-31"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">Visualizing distributions (html)</span><span class="co">](https://clauswilke.com/dataviz/histograms-density-plots.html)</span> by Wilke</span>
+<span id="cb41-32"><a href="#cb41-32"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">ggplot cheatsheet (pdf)</span><span class="co">](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)</span></span>
+<span id="cb41-33"><a href="#cb41-33"></a></span>
+<span id="cb41-34"><a href="#cb41-34"></a>:::</span>
+<span id="cb41-35"><a href="#cb41-35"></a></span>
+<span id="cb41-36"><a href="#cb41-36"></a></span>
+<span id="cb41-37"><a href="#cb41-37"></a>::: {.callout-important title="Instructions"}</span>
+<span id="cb41-38"><a href="#cb41-38"></a></span>
+<span id="cb41-39"><a href="#cb41-39"></a>**General**</span>
+<span id="cb41-40"><a href="#cb41-40"></a></span>
+<span id="cb41-41"><a href="#cb41-41"></a><span class="ss">-   </span>Be kind to yourself.</span>
+<span id="cb41-42"><a href="#cb41-42"></a><span class="ss">-   </span>Collaborate with and be kind to others. You are expected to work together as a group.</span>
+<span id="cb41-43"><a href="#cb41-43"></a><span class="ss">-   </span>Ask questions. Remember that we won't discuss these exercises as a class.</span>
+<span id="cb41-44"><a href="#cb41-44"></a></span>
+<span id="cb41-45"><a href="#cb41-45"></a>**Activity Specific**</span>
+<span id="cb41-46"><a href="#cb41-46"></a></span>
+<span id="cb41-47"><a href="#cb41-47"></a></span>
+<span id="cb41-48"><a href="#cb41-48"></a></span>
+<span id="cb41-49"><a href="#cb41-49"></a></span>
+<span id="cb41-50"><a href="#cb41-50"></a>Help each other with the following:</span>
+<span id="cb41-51"><a href="#cb41-51"></a></span>
+<span id="cb41-52"><a href="#cb41-52"></a></span>
+<span id="cb41-53"><a href="#cb41-53"></a><span class="ss">-   </span>Create a new Quarto document in the activities folder of your portfolio project and do not forgot to include it in <span class="in">`_quarto.yml`</span> file.  Then click the <span class="in">`&lt;/&gt; Code`</span> link at the top right corner of this page and copy the code into the created Quarto document.  This is where you'll take notes.  Remember that the portfolio is yours, so take notes in whatever way is best for you.</span>
+<span id="cb41-54"><a href="#cb41-54"></a><span class="ss">-   </span>**Don't start the Exercises section before we get there as a class.** First, engage in class discussion and eventually collaborate with your group on the exercises!</span>
+<span id="cb41-55"><a href="#cb41-55"></a><span class="ss">-   </span>The best way to learn <span class="in">`ggplot`</span> is to just play around. Focus on the *patterns* and *potential* of the code. Don't worry about memorizing anything! You will naturally start to remember the most important / common code the more and more you use it.</span>
+<span id="cb41-56"><a href="#cb41-56"></a></span>
+<span id="cb41-57"><a href="#cb41-57"></a>:::</span>
+<span id="cb41-58"><a href="#cb41-58"></a></span>
+<span id="cb41-59"><a href="#cb41-59"></a><span class="fu">## Background</span></span>
+<span id="cb41-60"><a href="#cb41-60"></a></span>
+<span id="cb41-61"><a href="#cb41-61"></a>We're starting our unit on **data visualization** or **data viz**, thus skipping some steps in the data science workflow.  Mainly, it's tough to understand how our data should be *prepared* before we have a sense of what we want to *do* with this data!</span>
+<span id="cb41-62"><a href="#cb41-62"></a></span>
+<span id="cb41-63"><a href="#cb41-63"></a><span class="al">![](https://mac-stat.github.io/images/112/legos.png)</span>{width="50%"}</span>
+<span id="cb41-64"><a href="#cb41-64"></a></span>
+<span id="cb41-65"><a href="#cb41-65"></a><span class="co">[</span><span class="ot">Source</span><span class="co">](https://www.effectivedatastorytelling.com/post/a-deeper-dive-into-lego-bricks-and-data-stories)</span></span>
+<span id="cb41-66"><a href="#cb41-66"></a></span>
+<span id="cb41-67"><a href="#cb41-67"></a></span>
+<span id="cb41-68"><a href="#cb41-68"></a><span class="fu">## Warm-up</span></span>
+<span id="cb41-69"><a href="#cb41-69"></a></span>
+<span id="cb41-70"><a href="#cb41-70"></a><span class="fu">### The Importance of Visualizations</span></span>
+<span id="cb41-71"><a href="#cb41-71"></a></span>
+<span id="cb41-72"><a href="#cb41-72"></a><span class="fu">#### EXAMPLE 1 {-}</span></span>
+<span id="cb41-73"><a href="#cb41-73"></a></span>
+<span id="cb41-74"><a href="#cb41-74"></a>The data below includes information on hiking trails in the 46 "high peaks" in the Adirondack mountains of Northeastern New York state. This includes data on the hike's highest <span class="in">`elevation`</span> (feet), vertical <span class="in">`ascent`</span> (feet), <span class="in">`length`</span> (miles), <span class="in">`time`</span> in hours that it takes to complete, and difficulty <span class="in">`rating`</span>. Open this data in a viewer, through the Environment tab or by typing <span class="in">`View(hikes)`</span> in the *console*.</span>
+<span id="cb41-75"><a href="#cb41-75"></a></span>
+<span id="cb41-78"><a href="#cb41-78"></a><span class="in">```{r}</span></span>
+<span id="cb41-79"><a href="#cb41-79"></a><span class="co"># Import data</span></span>
+<span id="cb41-80"><a href="#cb41-80"></a>hikes <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://mac-stat.github.io/data/high_peaks.csv"</span>)</span>
+<span id="cb41-81"><a href="#cb41-81"></a><span class="in">```</span></span>
+<span id="cb41-82"><a href="#cb41-82"></a></span>
+<span id="cb41-83"><a href="#cb41-83"></a>::: {.callout-warning title="Discussion"}</span>
+<span id="cb41-84"><a href="#cb41-84"></a></span>
+<span id="cb41-85"><a href="#cb41-85"></a><span class="ss">1. </span>What is the pattern / trend of <span class="in">`elevation`</span> of hiking trails?</span>
+<span id="cb41-86"><a href="#cb41-86"></a><span class="ss">2. </span>What is the relationship between a hike's <span class="in">`elevation`</span> and typical <span class="in">`time`</span> it takes to summit / reach the top?</span>
+<span id="cb41-87"><a href="#cb41-87"></a></span>
+<span id="cb41-88"><a href="#cb41-88"></a>:::</span>
+<span id="cb41-89"><a href="#cb41-89"></a></span>
+<span id="cb41-90"><a href="#cb41-90"></a></span>
+<span id="cb41-91"><a href="#cb41-91"></a><span class="fu">#### EXAMPLE 2 {-}</span></span>
+<span id="cb41-92"><a href="#cb41-92"></a></span>
+<span id="cb41-93"><a href="#cb41-93"></a>Look at the plot below taken from a story reported by <span class="co">[</span><span class="ot">this New York Times article (html)</span><span class="co">](https://www.nytimes.com/2024/01/09/climate/2023-warmest-year-record.html)</span>.</span>
+<span id="cb41-94"><a href="#cb41-94"></a></span>
+<span id="cb41-95"><a href="#cb41-95"></a>::: {.callout-warning title="Discussion"}</span>
+<span id="cb41-96"><a href="#cb41-96"></a></span>
+<span id="cb41-97"><a href="#cb41-97"></a>Suppose that the article tried telling the story *without* using data viz, What would that story be like?</span>
+<span id="cb41-98"><a href="#cb41-98"></a></span>
+<span id="cb41-99"><a href="#cb41-99"></a>:::</span>
+<span id="cb41-100"><a href="#cb41-100"></a></span>
+<span id="cb41-101"><a href="#cb41-101"></a><span class="al">![](https://mac-stat.github.io/images/112/nyt_temperature_viz.png)</span></span>
+<span id="cb41-102"><a href="#cb41-102"></a></span>
+<span id="cb41-103"><a href="#cb41-103"></a></span>
+<span id="cb41-104"><a href="#cb41-104"></a><span class="fu">#### Benefits of Visualization {-}</span></span>
+<span id="cb41-105"><a href="#cb41-105"></a></span>
+<span id="cb41-106"><a href="#cb41-106"></a><span class="ss">-   </span>Understand what we're working with from</span>
+<span id="cb41-107"><a href="#cb41-107"></a><span class="ss">    -   </span>scales &amp; typical outcomes, to</span>
+<span id="cb41-108"><a href="#cb41-108"></a><span class="ss">    -   </span>outliers, i.e. unusual cases, to</span>
+<span id="cb41-109"><a href="#cb41-109"></a><span class="ss">    -   </span>patterns &amp; relationships</span>
+<span id="cb41-110"><a href="#cb41-110"></a><span class="ss">-   </span>Refine research questions &amp; inform next steps of our analysis.</span>
+<span id="cb41-111"><a href="#cb41-111"></a><span class="ss">-   </span>Communicate our findings and tell a story.</span>
+<span id="cb41-112"><a href="#cb41-112"></a></span>
+<span id="cb41-113"><a href="#cb41-113"></a></span>
+<span id="cb41-114"><a href="#cb41-114"></a><span class="fu">### Components of data graphics</span></span>
+<span id="cb41-115"><a href="#cb41-115"></a></span>
+<span id="cb41-116"><a href="#cb41-116"></a><span class="fu">#### EXAMPLE 3 {-}</span></span>
+<span id="cb41-117"><a href="#cb41-117"></a></span>
+<span id="cb41-118"><a href="#cb41-118"></a>Data viz is the process of *mapping* data to different plot components. For example, in the NYT example above, the research team *mapped* data like the following (but with many more rows!) to the plot:</span>
+<span id="cb41-119"><a href="#cb41-119"></a></span>
+<span id="cb41-120"><a href="#cb41-120"></a>| observation | decade  | year | date | relative temp |</span>
+<span id="cb41-121"><a href="#cb41-121"></a>|:------------|:-------:|:----:|:----:|:-------------:|</span>
+<span id="cb41-122"><a href="#cb41-122"></a>| 1           | 2020-30 | 2023 | 1/23 |      1.2      |</span>
+<span id="cb41-123"><a href="#cb41-123"></a>| 2           | 1940-60 | 1945 | 3/45 |     -0.05     |</span>
+<span id="cb41-124"><a href="#cb41-124"></a></span>
+<span id="cb41-125"><a href="#cb41-125"></a>::: {.callout-warning title="Discussion"}</span>
+<span id="cb41-126"><a href="#cb41-126"></a></span>
+<span id="cb41-127"><a href="#cb41-127"></a>Write down step-by-step directions for using a data table like the one above to create the temperature visualization. A computer is your audience, thus be as precise as possible, but trust that the computer can find the exact numbers if you tell it where.</span>
+<span id="cb41-128"><a href="#cb41-128"></a></span>
+<span id="cb41-129"><a href="#cb41-129"></a>:::</span>
+<span id="cb41-130"><a href="#cb41-130"></a></span>
+<span id="cb41-131"><a href="#cb41-131"></a></span>
+<span id="cb41-132"><a href="#cb41-132"></a><span class="fu">#### COMPONENTS OF GRAPHICS {-}</span></span>
+<span id="cb41-133"><a href="#cb41-133"></a></span>
+<span id="cb41-134"><a href="#cb41-134"></a>In data viz, we essentially start with a blank canvas and then map data onto it. There are multiple possible *mapping components*. Some basics from <span class="co">[</span><span class="ot">Wickham</span><span class="co">](https://ggplot2-book.org/introduction)</span> (which goes into more depth):</span>
+<span id="cb41-135"><a href="#cb41-135"></a></span>
+<span id="cb41-136"><a href="#cb41-136"></a><span class="ss">-   </span>**a frame, or coordinate system**\</span>
+<span id="cb41-137"><a href="#cb41-137"></a>    The variables or features that define the axes and gridlines of the canvas.</span>
+<span id="cb41-138"><a href="#cb41-138"></a></span>
+<span id="cb41-139"><a href="#cb41-139"></a><span class="ss">-   </span>**a layer**\</span>
+<span id="cb41-140"><a href="#cb41-140"></a>    The geometric elements (e.g. lines, points) we add to the canvas to represent either the data points themselves or patterns among the data points. Each type of geometric element is a separate layer. These geometric elements are sometimes called "geoms" or "glyphs" (like *heiroglyph*!)</span>
+<span id="cb41-141"><a href="#cb41-141"></a></span>
+<span id="cb41-142"><a href="#cb41-142"></a><span class="ss">-   </span>**scales**\</span>
+<span id="cb41-143"><a href="#cb41-143"></a>    The aesthetics we might add to geometric elements (e.g. color, size, shape) to incorporate additional information about data scales or groups.</span>
+<span id="cb41-144"><a href="#cb41-144"></a></span>
+<span id="cb41-145"><a href="#cb41-145"></a><span class="ss">-   </span>**faceting**\</span>
+<span id="cb41-146"><a href="#cb41-146"></a>    The splitting up of the data into multiple subplots, or facets, to examine different groups within the data.</span>
+<span id="cb41-147"><a href="#cb41-147"></a></span>
+<span id="cb41-148"><a href="#cb41-148"></a><span class="ss">-   </span>**a theme**\</span>
+<span id="cb41-149"><a href="#cb41-149"></a>    Additional controls on the "finer points" of the plot aesthetics, (e.g. font type, background, color scheme).</span>
+<span id="cb41-150"><a href="#cb41-150"></a></span>
+<span id="cb41-151"><a href="#cb41-151"></a></span>
+<span id="cb41-152"><a href="#cb41-152"></a></span>
+<span id="cb41-153"><a href="#cb41-153"></a><span class="fu">#### EXAMPLE {-}</span></span>
+<span id="cb41-154"><a href="#cb41-154"></a></span>
+<span id="cb41-155"><a href="#cb41-155"></a>In the NYT graphic, the data was mapped to the plot as follows:</span>
+<span id="cb41-156"><a href="#cb41-156"></a></span>
+<span id="cb41-157"><a href="#cb41-157"></a><span class="ss">-   </span>**frame**: x-axis = date, y-axis = temp</span>
+<span id="cb41-158"><a href="#cb41-158"></a><span class="ss">-   </span>**layers:** add one line per year, add dots for each month in 2023</span>
+<span id="cb41-159"><a href="#cb41-159"></a><span class="ss">-   </span>**scales:** color each line by decade</span>
+<span id="cb41-160"><a href="#cb41-160"></a><span class="ss">-   </span>**faceting:** none</span>
+<span id="cb41-161"><a href="#cb41-161"></a><span class="ss">-   </span>**a theme:** NYT style</span>
+<span id="cb41-162"><a href="#cb41-162"></a></span>
+<span id="cb41-163"><a href="#cb41-163"></a></span>
+<span id="cb41-164"><a href="#cb41-164"></a><span class="fu">### ggplot + R packages</span></span>
+<span id="cb41-165"><a href="#cb41-165"></a></span>
+<span id="cb41-166"><a href="#cb41-166"></a>We will use the powerful <span class="in">`ggplot`</span> tools in R to build (most of) our viz. The <span class="in">`gg`</span> here is short for the **"grammar of graphics"**. These tools are developed in a way that:</span>
+<span id="cb41-167"><a href="#cb41-167"></a></span>
+<span id="cb41-168"><a href="#cb41-168"></a><span class="ss">-   </span>recognizes that code is communication (it has a grammar!)</span>
+<span id="cb41-169"><a href="#cb41-169"></a><span class="ss">-   </span>connects code to the components / philosophy of data viz</span>
+<span id="cb41-170"><a href="#cb41-170"></a></span>
+<span id="cb41-171"><a href="#cb41-171"></a></span>
+<span id="cb41-172"><a href="#cb41-172"></a></span>
+<span id="cb41-173"><a href="#cb41-173"></a><span class="fu">#### EXAMPLES: ggplot in the News {-}</span></span>
+<span id="cb41-174"><a href="#cb41-174"></a></span>
+<span id="cb41-175"><a href="#cb41-175"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">MPR journalist David Montgomery</span><span class="co">](http://dhmontgomery.com/portfolio/)</span>: <span class="co">[</span><span class="ot">R data viz</span><span class="co">](https://github.com/dhmontgomery/personal-work/tree/master/theme-mpr)</span></span>
+<span id="cb41-176"><a href="#cb41-176"></a><span class="ss">-   </span><span class="co">[</span><span class="ot">BBC R data viz</span><span class="co">](https://bbc.github.io/rcookbook/)</span></span>
+<span id="cb41-177"><a href="#cb41-177"></a></span>
+<span id="cb41-178"><a href="#cb41-178"></a></span>
+<span id="cb41-179"><a href="#cb41-179"></a>To use these tools, we must first get them into R/RStudio! Recall that R is *open source*. Anybody can build R tools and share them through special R **packages**. The **tidyverse package** compiles a set of individual packages, including <span class="in">`ggplot2`</span>, that share a common grammar and structure. Though the learning curve can be steep, this grammar is intuitive and generalizable once mastered. Image source: <span class="co">[</span><span class="ot">Posit BBC on X</span><span class="co">](https://twitter.com/posit_pbc/status/1145592633823244289)</span></span>
+<span id="cb41-180"><a href="#cb41-180"></a></span>
+<span id="cb41-181"><a href="#cb41-181"></a><span class="al">![](https://mac-stat.github.io/images/112/tidyverse.png)</span>{width="50%"}</span>
+<span id="cb41-182"><a href="#cb41-182"></a></span>
+<span id="cb41-183"><a href="#cb41-183"></a>Follow the directions below to *install* this package, the directions depending upon whether or not you're working on Mac's server. Unless the authors of a package add updates, you only need to do this once all semester. To install:</span>
+<span id="cb41-184"><a href="#cb41-184"></a></span>
+<span id="cb41-185"><a href="#cb41-185"></a><span class="ss">-   </span>**If you're working on Mac's RStudio server**\</span>
+<span id="cb41-186"><a href="#cb41-186"></a>    <span class="in">`tidyverse`</span> is already installed on the server! Check this 2 ways.</span>
+<span id="cb41-187"><a href="#cb41-187"></a><span class="ss">    -   </span>Type <span class="in">`library(tidyverse)`</span> in your console. If you don't get an error, it's installed!</span>
+<span id="cb41-188"><a href="#cb41-188"></a><span class="ss">    -   </span>Check that it appears in the list under the "Packages" tab (bottom right pane).</span>
+<span id="cb41-189"><a href="#cb41-189"></a><span class="ss">-   </span>**If you're working with a desktop version of R/RStudio**\</span>
+<span id="cb41-190"><a href="#cb41-190"></a>    In the "Packages" tab (bottom right pane), click "Install". From there type the name of the package (<span class="in">`tidyverse`</span>), make sure the "Install dependencies" box is checked, and click "Install".</span>
+<span id="cb41-191"><a href="#cb41-191"></a></span>
+<span id="cb41-192"><a href="#cb41-192"></a></span>
+<span id="cb41-193"><a href="#cb41-193"></a><span class="fu">## Exercises</span></span>
+<span id="cb41-194"><a href="#cb41-194"></a></span>
+<span id="cb41-195"><a href="#cb41-195"></a></span>
+<span id="cb41-196"><a href="#cb41-196"></a></span>
+<span id="cb41-197"><a href="#cb41-197"></a><span class="fu">### Exercise 1: Research Questions {.unnumbered}</span></span>
+<span id="cb41-198"><a href="#cb41-198"></a></span>
+<span id="cb41-199"><a href="#cb41-199"></a>Let's dig into the <span class="in">`hikes`</span> data, starting with the <span class="in">`elevation`</span> and difficulty <span class="in">`ratings`</span> of the hikes:</span>
+<span id="cb41-200"><a href="#cb41-200"></a></span>
+<span id="cb41-203"><a href="#cb41-203"></a><span class="in">```{r}</span></span>
+<span id="cb41-204"><a href="#cb41-204"></a><span class="fu">head</span>(hikes)</span>
+<span id="cb41-205"><a href="#cb41-205"></a><span class="in">```</span></span>
+<span id="cb41-206"><a href="#cb41-206"></a></span>
+<span id="cb41-207"><a href="#cb41-207"></a>a.  What features would we like a visualization of the *categorical* difficulty <span class="in">`rating`</span> variable to capture?</span>
+<span id="cb41-208"><a href="#cb41-208"></a>b.  What about a visualization of the *quantitative* <span class="in">`elevation`</span> variable?</span>
+<span id="cb41-209"><a href="#cb41-209"></a></span>
+<span id="cb41-210"><a href="#cb41-210"></a></span>
+<span id="cb41-211"><a href="#cb41-211"></a></span>
+<span id="cb41-212"><a href="#cb41-212"></a><span class="fu">### Exercise 2: Load tidyverse {.unnumbered}</span></span>
+<span id="cb41-213"><a href="#cb41-213"></a></span>
+<span id="cb41-214"><a href="#cb41-214"></a>We'll address the above questions using <span class="in">`ggplot`</span> tools. Try running the following chunk and simply take note of the error message -- this is one you'll get a lot!</span>
+<span id="cb41-215"><a href="#cb41-215"></a></span>
+<span id="cb41-216"><a href="#cb41-216"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-217"><a href="#cb41-217"></a><span class="in"># Use the ggplot function</span></span>
+<span id="cb41-218"><a href="#cb41-218"></a><span class="in">ggplot(hikes, aes(x = rating))</span></span>
+<span id="cb41-219"><a href="#cb41-219"></a><span class="in">```</span></span>
+<span id="cb41-220"><a href="#cb41-220"></a></span>
+<span id="cb41-221"><a href="#cb41-221"></a>In order to use <span class="in">`ggplot`</span> tools, we have to first *load* the `tidyverse` package in which they live. Mainly, we've *installed* the package but need to tell R when we want to *use* it. Run the chunk below to load the library. You'll need to do this within any .qmd file that uses <span class="in">`ggplot()`</span>.</span>
+<span id="cb41-222"><a href="#cb41-222"></a></span>
+<span id="cb41-223"><a href="#cb41-223"></a><span class="in">```{r message=FALSE}</span></span>
+<span id="cb41-224"><a href="#cb41-224"></a><span class="in"># Load the package</span></span>
+<span id="cb41-225"><a href="#cb41-225"></a><span class="in">library(tidyverse)</span></span>
+<span id="cb41-226"><a href="#cb41-226"></a><span class="in">```</span></span>
+<span id="cb41-227"><a href="#cb41-227"></a></span>
+<span id="cb41-228"><a href="#cb41-228"></a></span>
+<span id="cb41-229"><a href="#cb41-229"></a></span>
+<span id="cb41-230"><a href="#cb41-230"></a><span class="fu">### Exercise 3: Bar Chart of Ratings - Part 1 {.unnumbered}</span></span>
+<span id="cb41-231"><a href="#cb41-231"></a></span>
+<span id="cb41-232"><a href="#cb41-232"></a>Consider some specific research questions about the difficulty <span class="in">`rating`</span> of the hikes:</span>
+<span id="cb41-233"><a href="#cb41-233"></a></span>
+<span id="cb41-234"><a href="#cb41-234"></a><span class="ss">1. </span>How many hikes fall into each category?</span>
+<span id="cb41-235"><a href="#cb41-235"></a><span class="ss">2. </span>Are the hikes evenly distributed among these categories, or are some more common than others?</span>
+<span id="cb41-236"><a href="#cb41-236"></a></span>
+<span id="cb41-237"><a href="#cb41-237"></a>All of these questions can be answered with: (1) a **bar chart**; of (2) the *categorical* data recorded in the `rating` column. First, set up the plotting **frame**:</span>
+<span id="cb41-238"><a href="#cb41-238"></a></span>
+<span id="cb41-239"><a href="#cb41-239"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-240"><a href="#cb41-240"></a><span class="in">ggplot(hikes, aes(x = rating))</span></span>
+<span id="cb41-241"><a href="#cb41-241"></a><span class="in">```</span></span>
+<span id="cb41-242"><a href="#cb41-242"></a></span>
+<span id="cb41-243"><a href="#cb41-243"></a>Think about:</span>
+<span id="cb41-244"><a href="#cb41-244"></a></span>
+<span id="cb41-245"><a href="#cb41-245"></a><span class="ss">-   </span>What did this do? What do you observe?</span>
+<span id="cb41-246"><a href="#cb41-246"></a><span class="ss">-   </span>What, in general, is the first argument of the <span class="in">`ggplot()`</span> function?The data</span>
+<span id="cb41-247"><a href="#cb41-247"></a><span class="ss">-   </span>What is the purpose of writing <span class="in">`x = rating`</span>?</span>
+<span id="cb41-248"><a href="#cb41-248"></a><span class="ss">-   </span>What do you think <span class="in">`aes`</span> stands for?!?</span>
+<span id="cb41-249"><a href="#cb41-249"></a></span>
+<span id="cb41-250"><a href="#cb41-250"></a></span>
+<span id="cb41-251"><a href="#cb41-251"></a><span class="fu">### Exercise 4: Bar Chart of Ratings - Part 2 {.unnumbered}</span></span>
+<span id="cb41-252"><a href="#cb41-252"></a></span>
+<span id="cb41-253"><a href="#cb41-253"></a>Now let's add a **geometric layer** to the frame / canvas, and start customizing the plot's **theme**. To this end, try each chunk below, *one by one*. In each chunk, make a comment about how both the code and the corresponding plot both changed.</span>
+<span id="cb41-254"><a href="#cb41-254"></a></span>
+<span id="cb41-255"><a href="#cb41-255"></a>NOTE:</span>
+<span id="cb41-256"><a href="#cb41-256"></a></span>
+<span id="cb41-257"><a href="#cb41-257"></a><span class="ss">-   </span>Pay attention to the general code properties and structure, not memorization.</span>
+<span id="cb41-258"><a href="#cb41-258"></a><span class="ss">-   </span>Not all of these are "good" plots. We're just exploring <span class="in">`ggplot`</span>.</span>
+<span id="cb41-259"><a href="#cb41-259"></a></span>
+<span id="cb41-260"><a href="#cb41-260"></a></span>
+<span id="cb41-261"><a href="#cb41-261"></a></span>
+<span id="cb41-262"><a href="#cb41-262"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-263"><a href="#cb41-263"></a><span class="in"># Make a bar graph</span></span>
+<span id="cb41-264"><a href="#cb41-264"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
+<span id="cb41-265"><a href="#cb41-265"></a><span class="in">  geom_bar()</span></span>
+<span id="cb41-266"><a href="#cb41-266"></a><span class="in">```</span></span>
+<span id="cb41-267"><a href="#cb41-267"></a></span>
+<span id="cb41-268"><a href="#cb41-268"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-269"><a href="#cb41-269"></a><span class="in">#Label x an y axis</span></span>
+<span id="cb41-270"><a href="#cb41-270"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
+<span id="cb41-271"><a href="#cb41-271"></a><span class="in">  geom_bar() +</span></span>
+<span id="cb41-272"><a href="#cb41-272"></a><span class="in">  labs(x = "Rating", y = "Number of hikes")</span></span>
+<span id="cb41-273"><a href="#cb41-273"></a><span class="in">```</span></span>
+<span id="cb41-274"><a href="#cb41-274"></a></span>
+<span id="cb41-275"><a href="#cb41-275"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-276"><a href="#cb41-276"></a><span class="in"># Add a color or fill the bar graph</span></span>
+<span id="cb41-277"><a href="#cb41-277"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
+<span id="cb41-278"><a href="#cb41-278"></a><span class="in">  geom_bar(fill = "blue") +</span></span>
+<span id="cb41-279"><a href="#cb41-279"></a><span class="in">  labs(x = "Rating", y = "Number of hikes")</span></span>
+<span id="cb41-280"><a href="#cb41-280"></a><span class="in">```</span></span>
+<span id="cb41-281"><a href="#cb41-281"></a></span>
+<span id="cb41-282"><a href="#cb41-282"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-283"><a href="#cb41-283"></a><span class="in"># Makes the boundaries orange </span></span>
+<span id="cb41-284"><a href="#cb41-284"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
+<span id="cb41-285"><a href="#cb41-285"></a><span class="in">  geom_bar(color = "orange", fill = "blue") +</span></span>
+<span id="cb41-286"><a href="#cb41-286"></a><span class="in">  labs(x = "Rating", y = "Number of hikes")</span></span>
+<span id="cb41-287"><a href="#cb41-287"></a><span class="in">```</span></span>
+<span id="cb41-288"><a href="#cb41-288"></a></span>
+<span id="cb41-289"><a href="#cb41-289"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-290"><a href="#cb41-290"></a><span class="in"># Changes the theme of the graph </span></span>
+<span id="cb41-291"><a href="#cb41-291"></a><span class="in">ggplot(hikes, aes(x = rating)) +</span></span>
+<span id="cb41-292"><a href="#cb41-292"></a><span class="in">  geom_bar(color = "orange", fill = "blue")  +</span></span>
+<span id="cb41-293"><a href="#cb41-293"></a><span class="in">  labs(x = "Rating", y = "Number of hikes") +</span></span>
+<span id="cb41-294"><a href="#cb41-294"></a><span class="in">  theme_minimal()</span></span>
+<span id="cb41-295"><a href="#cb41-295"></a><span class="in">```</span></span>
+<span id="cb41-296"><a href="#cb41-296"></a></span>
+<span id="cb41-297"><a href="#cb41-297"></a></span>
+<span id="cb41-298"><a href="#cb41-298"></a></span>
+<span id="cb41-299"><a href="#cb41-299"></a><span class="fu">### Exercise 5: Bar Chart Follow-up {.unnumbered}</span></span>
+<span id="cb41-300"><a href="#cb41-300"></a></span>
+<span id="cb41-301"><a href="#cb41-301"></a><span class="fu">#### Part a {.unnumbered}</span></span>
+<span id="cb41-302"><a href="#cb41-302"></a></span>
+<span id="cb41-303"><a href="#cb41-303"></a>Reflect on the <span class="in">`ggplot()`</span> code.</span>
+<span id="cb41-304"><a href="#cb41-304"></a></span>
+<span id="cb41-305"><a href="#cb41-305"></a><span class="ss">-   </span>What's the purpose of the <span class="in">`+`</span>? When do we use it?- Use it to add a new command </span>
+<span id="cb41-306"><a href="#cb41-306"></a></span>
+<span id="cb41-307"><a href="#cb41-307"></a><span class="ss">-   </span>We added the bars using <span class="in">`geom_bar()`</span>? Why "geom"?- Use it to add a bar graph </span>
+<span id="cb41-308"><a href="#cb41-308"></a></span>
+<span id="cb41-309"><a href="#cb41-309"></a><span class="ss">-   </span>What does <span class="in">`labs()`</span> stand for? - Use it to add the axis or dimensions </span>
+<span id="cb41-310"><a href="#cb41-310"></a></span>
+<span id="cb41-311"><a href="#cb41-311"></a><span class="ss">-   </span>What's the difference between <span class="in">`color`</span> and <span class="in">`fill`</span>? - color changes boundaries and fill fills in the bar graph</span>
+<span id="cb41-312"><a href="#cb41-312"></a></span>
+<span id="cb41-313"><a href="#cb41-313"></a><span class="fu">#### Part b {.unnumbered}</span></span>
+<span id="cb41-314"><a href="#cb41-314"></a></span>
+<span id="cb41-315"><a href="#cb41-315"></a>In general, bar charts allow us to examine the following properties of a *categorical* variable:</span>
+<span id="cb41-316"><a href="#cb41-316"></a></span>
+<span id="cb41-317"><a href="#cb41-317"></a><span class="ss">-   </span>**observed categories**: What categories did we observe?</span>
+<span id="cb41-318"><a href="#cb41-318"></a></span>
+<span id="cb41-319"><a href="#cb41-319"></a><span class="ss">- </span>difficult</span>
+<span id="cb41-320"><a href="#cb41-320"></a></span>
+<span id="cb41-321"><a href="#cb41-321"></a><span class="ss">- </span>easy</span>
+<span id="cb41-322"><a href="#cb41-322"></a></span>
+<span id="cb41-323"><a href="#cb41-323"></a><span class="ss">- </span>moderate</span>
+<span id="cb41-324"><a href="#cb41-324"></a></span>
+<span id="cb41-325"><a href="#cb41-325"></a><span class="ss">-   </span>**variability between categories**: Are observations evenly spread out among the categories, or are some categories more common than others? </span>
+<span id="cb41-326"><a href="#cb41-326"></a></span>
+<span id="cb41-327"><a href="#cb41-327"></a><span class="ss">- </span>Some categories are more common than others </span>
+<span id="cb41-328"><a href="#cb41-328"></a></span>
+<span id="cb41-329"><a href="#cb41-329"></a>We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Summarize below what you learned from the bar chart, in context.</span>
+<span id="cb41-330"><a href="#cb41-330"></a></span>
+<span id="cb41-331"><a href="#cb41-331"></a><span class="ss">- </span>Most hikes in the Adirondacks are moderate in rating and the only a few hikes are difficult in the given data</span>
+<span id="cb41-332"><a href="#cb41-332"></a></span>
+<span id="cb41-333"><a href="#cb41-333"></a><span class="fu">#### Part c {.unnumbered}</span></span>
+<span id="cb41-334"><a href="#cb41-334"></a></span>
+<span id="cb41-335"><a href="#cb41-335"></a>Is there anything you don't like about this barplot? For example: check out the x-axis again.</span>
+<span id="cb41-336"><a href="#cb41-336"></a></span>
+<span id="cb41-337"><a href="#cb41-337"></a>The categories are not orderd by difficulty</span>
+<span id="cb41-338"><a href="#cb41-338"></a></span>
+<span id="cb41-339"><a href="#cb41-339"></a><span class="fu">### Exercise 6: Sad Bar Chart {.unnumbered}</span></span>
+<span id="cb41-340"><a href="#cb41-340"></a></span>
+<span id="cb41-341"><a href="#cb41-341"></a>Let's now consider some research questions related to the *quantitative* <span class="in">`elevation`</span> variable:</span>
+<span id="cb41-342"><a href="#cb41-342"></a></span>
+<span id="cb41-343"><a href="#cb41-343"></a><span class="ss">1. </span>Among the hikes, what's the *range* of elevation and how are the hikes *distributed* within this range (e.g. evenly, in clumps, "normally")?</span>
+<span id="cb41-344"><a href="#cb41-344"></a>It is ordered in clumps </span>
+<span id="cb41-345"><a href="#cb41-345"></a></span>
+<span id="cb41-346"><a href="#cb41-346"></a></span>
+<span id="cb41-347"><a href="#cb41-347"></a></span>
+<span id="cb41-348"><a href="#cb41-348"></a><span class="ss">2. </span>What's a *typical* elevation?</span>
+<span id="cb41-349"><a href="#cb41-349"></a></span>
+<span id="cb41-350"><a href="#cb41-350"></a><span class="ss">3. </span>Are there any *outliers*, i.e. hikes that have unusually high or low elevations?</span>
+<span id="cb41-351"><a href="#cb41-351"></a></span>
+<span id="cb41-352"><a href="#cb41-352"></a>Here:</span>
+<span id="cb41-353"><a href="#cb41-353"></a></span>
+<span id="cb41-354"><a href="#cb41-354"></a><span class="ss">-   </span>Construct a **bar chart** of the *quantitative* <span class="in">`elevation`</span> variable.</span>
+<span id="cb41-355"><a href="#cb41-355"></a><span class="ss">-   </span>Explain why this might *not* be an effective visualization for this and other quantitative variables. (What questions does / doesn't it help answer?) </span>
+<span id="cb41-356"><a href="#cb41-356"></a></span>
+<span id="cb41-357"><a href="#cb41-357"></a><span class="ss">- </span>Each x value would be its own category and it would be too many</span>
+<span id="cb41-358"><a href="#cb41-358"></a></span>
+<span id="cb41-361"><a href="#cb41-361"></a><span class="in">```{r}</span></span>
+<span id="cb41-362"><a href="#cb41-362"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-363"><a href="#cb41-363"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>)  <span class="sc">+</span></span>
+<span id="cb41-364"><a href="#cb41-364"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>) <span class="sc">+</span></span>
+<span id="cb41-365"><a href="#cb41-365"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-366"><a href="#cb41-366"></a><span class="in">```</span></span>
+<span id="cb41-367"><a href="#cb41-367"></a></span>
+<span id="cb41-368"><a href="#cb41-368"></a></span>
+<span id="cb41-369"><a href="#cb41-369"></a></span>
+<span id="cb41-370"><a href="#cb41-370"></a><span class="fu">### Exercise 7: A Histogram of Elevation {.unnumbered}</span></span>
+<span id="cb41-371"><a href="#cb41-371"></a></span>
+<span id="cb41-372"><a href="#cb41-372"></a>Quantitative variables require different viz than categorical variables. Especially when there are many possible outcomes of the quantitative variable. It's typically insufficient to simply count up the number of times we've observed a particular outcome as the bar graph did above. It gives us a sense of ranges and typical outcomes, but not a good sense of how the observations are distributed across this range. We'll explore two methods for graphing quantitative variables: **histograms** and **density plots**.</span>
+<span id="cb41-373"><a href="#cb41-373"></a></span>
+<span id="cb41-374"><a href="#cb41-374"></a>**Histograms** are constructed by (1) dividing up the observed range of the variable into 'bins' of equal width; and (2) counting up the number of cases that fall into each bin. Check out the example below:</span>
+<span id="cb41-375"><a href="#cb41-375"></a></span>
+<span id="cb41-376"><a href="#cb41-376"></a><span class="al">![](https://mac-stat.github.io/images/112/histogram_demo.png)</span>{width="50%"}</span>
+<span id="cb41-377"><a href="#cb41-377"></a></span>
+<span id="cb41-378"><a href="#cb41-378"></a><span class="fu">#### Part a {.unnumbered}</span></span>
+<span id="cb41-379"><a href="#cb41-379"></a></span>
+<span id="cb41-380"><a href="#cb41-380"></a>Let's dig into some details.</span>
+<span id="cb41-381"><a href="#cb41-381"></a></span>
+<span id="cb41-382"><a href="#cb41-382"></a><span class="ss">-   </span>How many hikes have an elevation between 4500 and 4700 feet?</span>
+<span id="cb41-383"><a href="#cb41-383"></a><span class="ss">- </span>6</span>
+<span id="cb41-384"><a href="#cb41-384"></a></span>
+<span id="cb41-385"><a href="#cb41-385"></a><span class="ss">-   </span>How many total hikes have an elevation of at least 5100 feet?</span>
+<span id="cb41-386"><a href="#cb41-386"></a></span>
+<span id="cb41-387"><a href="#cb41-387"></a><span class="ss">- </span>1+1 = 2</span>
+<span id="cb41-388"><a href="#cb41-388"></a></span>
+<span id="cb41-389"><a href="#cb41-389"></a><span class="fu">#### Part b {.unnumbered}</span></span>
+<span id="cb41-390"><a href="#cb41-390"></a></span>
+<span id="cb41-391"><a href="#cb41-391"></a>Now the bigger picture. In general, histograms allow us to examine the following properties of a *quantitative* variable:</span>
+<span id="cb41-392"><a href="#cb41-392"></a></span>
+<span id="cb41-393"><a href="#cb41-393"></a><span class="ss">-   </span>**typical outcome:** Where’s the center of the data points? What's typical?</span>
+<span id="cb41-394"><a href="#cb41-394"></a><span class="ss">-   </span>**variability &amp; range:** How spread out are the outcomes? What are the max and min outcomes?</span>
+<span id="cb41-395"><a href="#cb41-395"></a><span class="ss">-   </span>**shape:** How are values distributed along the observed range? Is the distribution symmetric, right-skewed, left-skewed, bi-modal, or uniform (flat)?</span>
+<span id="cb41-396"><a href="#cb41-396"></a><span class="ss">-   </span>**outliers:** Are there any outliers, i.e. outcomes that are unusually large/small?</span>
+<span id="cb41-397"><a href="#cb41-397"></a></span>
+<span id="cb41-398"><a href="#cb41-398"></a>We must then *translate* this information into the *context* of our analysis, here hikes in the Adirondacks. Addressing each of the features in the above list, summarize below what you learned from the histogram, in context.</span>
+<span id="cb41-399"><a href="#cb41-399"></a></span>
+<span id="cb41-400"><a href="#cb41-400"></a></span>
+<span id="cb41-401"><a href="#cb41-401"></a></span>
+<span id="cb41-402"><a href="#cb41-402"></a><span class="fu">### Exercise 8: Building Histograms - Part 1 {.unnumbered}</span></span>
+<span id="cb41-403"><a href="#cb41-403"></a></span>
+<span id="cb41-404"><a href="#cb41-404"></a>2-MINUTE CHALLENGE: Thinking of the bar chart code, try to *intuit* what line you can tack on to the below frame of `elevation` to add a histogram layer. Don't forget a `+`. If it doesn't come to you within 2 minutes, *no problem* -- all will be revealed in the next exercise.</span>
+<span id="cb41-405"><a href="#cb41-405"></a></span>
+<span id="cb41-406"><a href="#cb41-406"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-407"><a href="#cb41-407"></a><span class="in">ggplot(hikes, aes(x = elevation))+</span></span>
+<span id="cb41-408"><a href="#cb41-408"></a><span class="in">  geom_histogram(color= "black", fill = "blue")</span></span>
+<span id="cb41-409"><a href="#cb41-409"></a></span>
+<span id="cb41-410"><a href="#cb41-410"></a><span class="in">```</span></span>
+<span id="cb41-411"><a href="#cb41-411"></a></span>
+<span id="cb41-412"><a href="#cb41-412"></a></span>
+<span id="cb41-413"><a href="#cb41-413"></a><span class="fu">### Exercise 9: Building Histograms - Part 2 {.unnumbered}</span></span>
+<span id="cb41-414"><a href="#cb41-414"></a></span>
+<span id="cb41-415"><a href="#cb41-415"></a>Let's build some histograms. Try each chunk below, *one by one*. In each chunk, make a comment about how both the code and the corresponding plot both changed.</span>
+<span id="cb41-416"><a href="#cb41-416"></a></span>
+<span id="cb41-417"><a href="#cb41-417"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-418"><a href="#cb41-418"></a><span class="in"># makes a histogram</span></span>
+<span id="cb41-419"><a href="#cb41-419"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-420"><a href="#cb41-420"></a><span class="in">  geom_histogram()</span></span>
+<span id="cb41-421"><a href="#cb41-421"></a><span class="in">```</span></span>
+<span id="cb41-422"><a href="#cb41-422"></a></span>
+<span id="cb41-423"><a href="#cb41-423"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-424"><a href="#cb41-424"></a><span class="in"># makes the outline white </span></span>
+<span id="cb41-425"><a href="#cb41-425"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-426"><a href="#cb41-426"></a><span class="in">  geom_histogram(color = "white") </span></span>
+<span id="cb41-427"><a href="#cb41-427"></a><span class="in">```</span></span>
+<span id="cb41-428"><a href="#cb41-428"></a></span>
+<span id="cb41-429"><a href="#cb41-429"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-430"><a href="#cb41-430"></a><span class="in"># Fills in the bars with blue </span></span>
+<span id="cb41-431"><a href="#cb41-431"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-432"><a href="#cb41-432"></a><span class="in">  geom_histogram(color = "white", fill = "blue") </span></span>
+<span id="cb41-433"><a href="#cb41-433"></a><span class="in">```</span></span>
+<span id="cb41-434"><a href="#cb41-434"></a></span>
+<span id="cb41-435"><a href="#cb41-435"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-436"><a href="#cb41-436"></a><span class="in"># Labels the axis </span></span>
+<span id="cb41-437"><a href="#cb41-437"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-438"><a href="#cb41-438"></a><span class="in">  geom_histogram(color = "white") +</span></span>
+<span id="cb41-439"><a href="#cb41-439"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
+<span id="cb41-440"><a href="#cb41-440"></a><span class="in">```</span></span>
+<span id="cb41-441"><a href="#cb41-441"></a></span>
+<span id="cb41-442"><a href="#cb41-442"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-443"><a href="#cb41-443"></a><span class="in"># Increases the size of the "containers/bins" to include the numbers in </span></span>
+<span id="cb41-444"><a href="#cb41-444"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-445"><a href="#cb41-445"></a><span class="in">  geom_histogram(color = "white", binwidth = 1000) +</span></span>
+<span id="cb41-446"><a href="#cb41-446"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
+<span id="cb41-447"><a href="#cb41-447"></a><span class="in">```</span></span>
+<span id="cb41-448"><a href="#cb41-448"></a></span>
+<span id="cb41-449"><a href="#cb41-449"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-450"><a href="#cb41-450"></a><span class="in"># reduce the size of the bins</span></span>
+<span id="cb41-451"><a href="#cb41-451"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-452"><a href="#cb41-452"></a><span class="in">  geom_histogram(color = "white", binwidth = 5) +</span></span>
+<span id="cb41-453"><a href="#cb41-453"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
+<span id="cb41-454"><a href="#cb41-454"></a><span class="in">```</span></span>
+<span id="cb41-455"><a href="#cb41-455"></a></span>
+<span id="cb41-456"><a href="#cb41-456"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-457"><a href="#cb41-457"></a><span class="in"># Change size of bins to 200</span></span>
+<span id="cb41-458"><a href="#cb41-458"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-459"><a href="#cb41-459"></a><span class="in">  geom_histogram(color = "white", binwidth = 200) +</span></span>
+<span id="cb41-460"><a href="#cb41-460"></a><span class="in">  labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
+<span id="cb41-461"><a href="#cb41-461"></a><span class="in">```</span></span>
+<span id="cb41-462"><a href="#cb41-462"></a></span>
+<span id="cb41-463"><a href="#cb41-463"></a></span>
+<span id="cb41-464"><a href="#cb41-464"></a><span class="fu">### Exercise 10: Histogram Follow-up {.unnumbered}</span></span>
+<span id="cb41-465"><a href="#cb41-465"></a></span>
+<span id="cb41-466"><a href="#cb41-466"></a><span class="ss">-   </span>What function added the histogram layer / geometry?</span>
+<span id="cb41-467"><a href="#cb41-467"></a><span class="ss">-   </span>What's the difference between <span class="in">`color`</span> and <span class="in">`fill`</span>?</span>
+<span id="cb41-468"><a href="#cb41-468"></a><span class="ss">-   </span>Why does adding <span class="in">`color = "white"`</span> improve the visualization?</span>
+<span id="cb41-469"><a href="#cb41-469"></a><span class="ss">-   </span>What did <span class="in">`binwidth`</span> do?</span>
+<span id="cb41-470"><a href="#cb41-470"></a><span class="ss">-   </span>Why does the histogram become ineffective if the <span class="in">`binwidth`</span> is too big (e.g. 1000 feet)?</span>
+<span id="cb41-471"><a href="#cb41-471"></a><span class="ss">-   </span>Why does the histogram become ineffective if the <span class="in">`binwidth`</span> is too small (e.g. 5 feet)?</span>
+<span id="cb41-472"><a href="#cb41-472"></a></span>
+<span id="cb41-473"><a href="#cb41-473"></a></span>
+<span id="cb41-474"><a href="#cb41-474"></a><span class="fu">### Exercise 11: Density Plots {.unnumbered}</span></span>
+<span id="cb41-475"><a href="#cb41-475"></a></span>
+<span id="cb41-476"><a href="#cb41-476"></a>**Density plots** are essentially smooth versions of the histogram. Instead of sorting observations into discrete bins, the "density" of observations is calculated across the entire range of outcomes. The greater the number of observations, the greater the density! The density is then scaled so that the area under the density curve **always equals 1** and the area under any fraction of the curve represents the fraction of cases that lie in that range.</span>
+<span id="cb41-477"><a href="#cb41-477"></a></span>
+<span id="cb41-478"><a href="#cb41-478"></a>Check out a density plot of elevation. Notice that the y-axis (density) has no contextual interpretation -- it's a relative measure. The *higher* the density, the more *common* are elevations in that range.</span>
+<span id="cb41-479"><a href="#cb41-479"></a></span>
+<span id="cb41-480"><a href="#cb41-480"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-481"><a href="#cb41-481"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-482"><a href="#cb41-482"></a><span class="in">  geom_density()</span></span>
+<span id="cb41-483"><a href="#cb41-483"></a><span class="in">```</span></span>
+<span id="cb41-484"><a href="#cb41-484"></a></span>
+<span id="cb41-485"><a href="#cb41-485"></a>**Questions**</span>
+<span id="cb41-486"><a href="#cb41-486"></a></span>
+<span id="cb41-487"><a href="#cb41-487"></a><span class="ss">-   </span>INTUITION CHECK: Before tweaking the code and thinking back to <span class="in">`geom_bar()`</span> and <span class="in">`geom_histogram()`</span>, how do you *anticipate* the following code will change the plot?</span>
+<span id="cb41-488"><a href="#cb41-488"></a></span>
+<span id="cb41-489"><a href="#cb41-489"></a><span class="ss">    -   </span><span class="in">`geom_density(color = "blue")`</span></span>
+<span id="cb41-490"><a href="#cb41-490"></a><span class="ss">    -   </span><span class="in">`geom_density(fill = "orange")`</span></span>
+<span id="cb41-491"><a href="#cb41-491"></a></span>
+<span id="cb41-492"><a href="#cb41-492"></a><span class="ss">-   </span>TRY IT! Test out those lines in the chunk below. Was your intuition correct?</span>
+<span id="cb41-493"><a href="#cb41-493"></a></span>
+<span id="cb41-496"><a href="#cb41-496"></a><span class="in">```{r}</span></span>
+<span id="cb41-497"><a href="#cb41-497"></a><span class="in">```</span></span>
+<span id="cb41-498"><a href="#cb41-498"></a></span>
+<span id="cb41-499"><a href="#cb41-499"></a><span class="ss">-   </span>Examine the density plot. How does it compare to the histogram? What does it tell you about the *typical* elevation, *variability / range* in elevations, and *shape* of the distribution of *elevations* within this range?</span>
+<span id="cb41-500"><a href="#cb41-500"></a></span>
+<span id="cb41-501"><a href="#cb41-501"></a></span>
+<span id="cb41-502"><a href="#cb41-502"></a></span>
+<span id="cb41-503"><a href="#cb41-503"></a><span class="fu">### Exercise 12: Density Plots vs Histograms {.unnumbered}</span></span>
+<span id="cb41-504"><a href="#cb41-504"></a></span>
+<span id="cb41-505"><a href="#cb41-505"></a>The histogram and density plot both allow us to visualize the behavior of a quantitative variable: typical outcome, variability / range, shape, and outliers. What are the pros/cons of each? What do you like/not like about each?</span>
+<span id="cb41-506"><a href="#cb41-506"></a></span>
+<span id="cb41-507"><a href="#cb41-507"></a></span>
+<span id="cb41-508"><a href="#cb41-508"></a><span class="fu">### Exercise 13: Code = communication {.unnumbered}</span></span>
+<span id="cb41-509"><a href="#cb41-509"></a></span>
+<span id="cb41-510"><a href="#cb41-510"></a>We *obviously* won't be done until we talk about communication. All code above has a similar *general* structure (where the details can change):</span>
+<span id="cb41-511"><a href="#cb41-511"></a></span>
+<span id="cb41-512"><a href="#cb41-512"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-513"><a href="#cb41-513"></a><span class="in">ggplot(___, aes(x = ___)) + </span></span>
+<span id="cb41-514"><a href="#cb41-514"></a><span class="in">  geom___(color = "___", fill = "___") + </span></span>
+<span id="cb41-515"><a href="#cb41-515"></a><span class="in">  labs(x = "___", y = "___")</span></span>
+<span id="cb41-516"><a href="#cb41-516"></a><span class="in">```</span></span>
+<span id="cb41-517"><a href="#cb41-517"></a></span>
+<span id="cb41-518"><a href="#cb41-518"></a><span class="ss">-   </span>Though not *necessary* to the code working, it's common, good practice to *indent* or *tab* the lines of code after the first line (counterexample below). Why?</span>
+<span id="cb41-519"><a href="#cb41-519"></a></span>
+<span id="cb41-520"><a href="#cb41-520"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-521"><a href="#cb41-521"></a><span class="in"># YUCK</span></span>
+<span id="cb41-522"><a href="#cb41-522"></a><span class="in">ggplot(hikes, aes(x = elevation)) +</span></span>
+<span id="cb41-523"><a href="#cb41-523"></a><span class="in">geom_histogram(color = "white", binwidth = 200) +</span></span>
+<span id="cb41-524"><a href="#cb41-524"></a><span class="in">labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
+<span id="cb41-525"><a href="#cb41-525"></a><span class="in">```</span></span>
+<span id="cb41-526"><a href="#cb41-526"></a></span>
+<span id="cb41-527"><a href="#cb41-527"></a><span class="ss">-   </span>Though not *necessary* to the code working, it's common, good practice to put a *line break* after each <span class="in">`+`</span> (counterexample below). Why?</span>
+<span id="cb41-528"><a href="#cb41-528"></a></span>
+<span id="cb41-529"><a href="#cb41-529"></a><span class="in">```{r eval = FALSE}</span></span>
+<span id="cb41-530"><a href="#cb41-530"></a><span class="in"># YUCK </span></span>
+<span id="cb41-531"><a href="#cb41-531"></a><span class="in">ggplot(hikes, aes(x = elevation)) + geom_histogram(color = "white", binwidth = 200) + labs(x = "Elevation (feet)", y = "Number of hikes")</span></span>
+<span id="cb41-532"><a href="#cb41-532"></a><span class="in">```</span></span>
+<span id="cb41-533"><a href="#cb41-533"></a></span>
+<span id="cb41-534"><a href="#cb41-534"></a></span>
+<span id="cb41-535"><a href="#cb41-535"></a><span class="fu">### Exercise 14: Practice {.unnumbered}</span></span>
+<span id="cb41-536"><a href="#cb41-536"></a></span>
+<span id="cb41-537"><a href="#cb41-537"></a><span class="fu">#### Part a {.unnumbered}</span></span>
+<span id="cb41-538"><a href="#cb41-538"></a></span>
+<span id="cb41-539"><a href="#cb41-539"></a>Practice your viz skills to learn about some of the variables in one of the following datasets from the previous class:</span>
+<span id="cb41-540"><a href="#cb41-540"></a></span>
+<span id="cb41-543"><a href="#cb41-543"></a><span class="in">```{r}</span></span>
+<span id="cb41-544"><a href="#cb41-544"></a><span class="co"># Data on students in this class</span></span>
+<span id="cb41-545"><a href="#cb41-545"></a>survey <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://ajohns24.github.io/data/112/about_us_2024.csv"</span>)</span>
+<span id="cb41-546"><a href="#cb41-546"></a></span>
+<span id="cb41-547"><a href="#cb41-547"></a><span class="co"># World Cup data</span></span>
+<span id="cb41-548"><a href="#cb41-548"></a>world_cup <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-11-29/worldcups.csv"</span>)</span>
+<span id="cb41-549"><a href="#cb41-549"></a><span class="in">```</span></span>
+<span id="cb41-550"><a href="#cb41-550"></a></span>
+<span id="cb41-551"><a href="#cb41-551"></a><span class="fu">#### Part b {.unnumbered}</span></span>
+<span id="cb41-552"><a href="#cb41-552"></a></span>
+<span id="cb41-553"><a href="#cb41-553"></a>Check out the <span class="co">[</span><span class="ot">RStudio Data Visualization cheat sheet</span><span class="co">](https://raw.githubusercontent.com/rstudio/cheatsheets/main/data-visualization.pdf)</span> to learn more features of <span class="in">`ggplot`</span>.</span>
+<span id="cb41-554"><a href="#cb41-554"></a></span>
+<span id="cb41-555"><a href="#cb41-555"></a>::: {.callout-warning title="Check → Commit → Push"}</span>
+<span id="cb41-556"><a href="#cb41-556"></a>When done, don't forgot to click **Render Book** and check the resulting HTML files. If happy, jump to GitHub Desktop and commit the changes with the message **Finish activity 3** and push to GitHub.  Wait few seconds, then visit your portfolio website and make sure the changes are there.</span>
+<span id="cb41-557"><a href="#cb41-557"></a>:::</span>
+<span id="cb41-558"><a href="#cb41-558"></a></span>
+<span id="cb41-559"><a href="#cb41-559"></a><span class="fu">## Solutions</span></span>
+<span id="cb41-560"><a href="#cb41-560"></a></span>
+<span id="cb41-561"><a href="#cb41-561"></a>&lt;details&gt;</span>
+<span id="cb41-562"><a href="#cb41-562"></a></span>
+<span id="cb41-563"><a href="#cb41-563"></a>&lt;summary&gt;Click for Solutions&lt;/summary&gt;</span>
+<span id="cb41-564"><a href="#cb41-564"></a></span>
+<span id="cb41-565"><a href="#cb41-565"></a><span class="fu">### Exercise 1: Research Questions {.unnumbered}</span></span>
+<span id="cb41-566"><a href="#cb41-566"></a></span>
+<span id="cb41-567"><a href="#cb41-567"></a>a.  For example: how many hikes are there in each category? are any categories more common than others?</span>
+<span id="cb41-568"><a href="#cb41-568"></a>b.  For example: What's a typical elevation? What's the range in elevations?</span>
+<span id="cb41-569"><a href="#cb41-569"></a></span>
+<span id="cb41-570"><a href="#cb41-570"></a></span>
+<span id="cb41-571"><a href="#cb41-571"></a></span>
+<span id="cb41-572"><a href="#cb41-572"></a><span class="fu">### Exercise 3: Bar Chart of Ratings - Part 1 {.unnumbered}</span></span>
+<span id="cb41-573"><a href="#cb41-573"></a></span>
+<span id="cb41-576"><a href="#cb41-576"></a><span class="in">```{r}</span></span>
+<span id="cb41-577"><a href="#cb41-577"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating))</span>
+<span id="cb41-578"><a href="#cb41-578"></a><span class="in">```</span></span>
+<span id="cb41-579"><a href="#cb41-579"></a></span>
+<span id="cb41-580"><a href="#cb41-580"></a><span class="ss">-   </span>just a blank canvas</span>
+<span id="cb41-581"><a href="#cb41-581"></a><span class="ss">-   </span>name of the dataset</span>
+<span id="cb41-582"><a href="#cb41-582"></a><span class="ss">-   </span>indicate which variable to plot on x-axis</span>
+<span id="cb41-583"><a href="#cb41-583"></a><span class="ss">-   </span><span class="in">`aes`</span>thetics</span>
+<span id="cb41-584"><a href="#cb41-584"></a></span>
+<span id="cb41-585"><a href="#cb41-585"></a></span>
+<span id="cb41-586"><a href="#cb41-586"></a></span>
+<span id="cb41-587"><a href="#cb41-587"></a><span class="fu">### Exercise 4: Bar Chart of Ratings - Part 2 {.unnumbered}</span></span>
+<span id="cb41-588"><a href="#cb41-588"></a></span>
+<span id="cb41-591"><a href="#cb41-591"></a><span class="in">```{r}</span></span>
+<span id="cb41-592"><a href="#cb41-592"></a><span class="co"># Add a bar plot LAYER</span></span>
+<span id="cb41-593"><a href="#cb41-593"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
+<span id="cb41-594"><a href="#cb41-594"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb41-595"><a href="#cb41-595"></a></span>
+<span id="cb41-596"><a href="#cb41-596"></a><span class="co"># Add meaningful axis labels</span></span>
+<span id="cb41-597"><a href="#cb41-597"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
+<span id="cb41-598"><a href="#cb41-598"></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb41-599"><a href="#cb41-599"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-600"><a href="#cb41-600"></a></span>
+<span id="cb41-601"><a href="#cb41-601"></a><span class="co"># FILL the bars with blue</span></span>
+<span id="cb41-602"><a href="#cb41-602"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
+<span id="cb41-603"><a href="#cb41-603"></a>  <span class="fu">geom_bar</span>(<span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb41-604"><a href="#cb41-604"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-605"><a href="#cb41-605"></a></span>
+<span id="cb41-606"><a href="#cb41-606"></a><span class="co"># COLOR the outline of the bars in orange</span></span>
+<span id="cb41-607"><a href="#cb41-607"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
+<span id="cb41-608"><a href="#cb41-608"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb41-609"><a href="#cb41-609"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-610"><a href="#cb41-610"></a></span>
+<span id="cb41-611"><a href="#cb41-611"></a><span class="co"># Change the theme to a white background</span></span>
+<span id="cb41-612"><a href="#cb41-612"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> rating)) <span class="sc">+</span></span>
+<span id="cb41-613"><a href="#cb41-613"></a>  <span class="fu">geom_bar</span>(<span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>)  <span class="sc">+</span></span>
+<span id="cb41-614"><a href="#cb41-614"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Rating"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>) <span class="sc">+</span> </span>
+<span id="cb41-615"><a href="#cb41-615"></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb41-616"><a href="#cb41-616"></a><span class="in">```</span></span>
+<span id="cb41-617"><a href="#cb41-617"></a></span>
+<span id="cb41-618"><a href="#cb41-618"></a></span>
+<span id="cb41-619"><a href="#cb41-619"></a><span class="fu">### Exercise 5: Bar Chart Follow-up {.unnumbered}</span></span>
+<span id="cb41-620"><a href="#cb41-620"></a></span>
+<span id="cb41-621"><a href="#cb41-621"></a><span class="fu">#### Part a {.unnumbered}</span></span>
+<span id="cb41-622"><a href="#cb41-622"></a></span>
+<span id="cb41-623"><a href="#cb41-623"></a><span class="ss">-   </span>To indicate we're still adding layers to / modifying our plot.</span>
+<span id="cb41-624"><a href="#cb41-624"></a><span class="ss">-   </span>Bars are the <span class="in">`geom`</span>etric elements we're adding in this layer.</span>
+<span id="cb41-625"><a href="#cb41-625"></a><span class="ss">-   </span>labels</span>
+<span id="cb41-626"><a href="#cb41-626"></a><span class="ss">-   </span><span class="in">`fill`</span> fills in the bars. <span class="in">`color`</span> outlines the bars.</span>
+<span id="cb41-627"><a href="#cb41-627"></a></span>
+<span id="cb41-628"><a href="#cb41-628"></a><span class="fu">#### Part b {.unnumbered}</span></span>
+<span id="cb41-629"><a href="#cb41-629"></a></span>
+<span id="cb41-630"><a href="#cb41-630"></a>Most hikes are moderate, the fewest number are difficult.</span>
+<span id="cb41-631"><a href="#cb41-631"></a></span>
+<span id="cb41-632"><a href="#cb41-632"></a><span class="fu">#### Part c {.unnumbered}</span></span>
+<span id="cb41-633"><a href="#cb41-633"></a></span>
+<span id="cb41-634"><a href="#cb41-634"></a>I don't like that the categories are alphabetical, not in order of difficulty level.</span>
+<span id="cb41-635"><a href="#cb41-635"></a></span>
+<span id="cb41-636"><a href="#cb41-636"></a></span>
+<span id="cb41-637"><a href="#cb41-637"></a></span>
+<span id="cb41-638"><a href="#cb41-638"></a><span class="fu">### Exercise 6: Sad Bar Chart {.unnumbered}</span></span>
+<span id="cb41-639"><a href="#cb41-639"></a></span>
+<span id="cb41-640"><a href="#cb41-640"></a>There are too many different outcomes of elevation.</span>
+<span id="cb41-641"><a href="#cb41-641"></a></span>
+<span id="cb41-644"><a href="#cb41-644"></a><span class="in">```{r}</span></span>
+<span id="cb41-645"><a href="#cb41-645"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span> </span>
+<span id="cb41-646"><a href="#cb41-646"></a>  <span class="fu">geom_bar</span>()</span>
+<span id="cb41-647"><a href="#cb41-647"></a><span class="in">```</span></span>
+<span id="cb41-648"><a href="#cb41-648"></a></span>
+<span id="cb41-649"><a href="#cb41-649"></a></span>
+<span id="cb41-650"><a href="#cb41-650"></a></span>
+<span id="cb41-651"><a href="#cb41-651"></a><span class="fu">### Exercise 7: A Histogram of Elevation {.unnumbered}</span></span>
+<span id="cb41-652"><a href="#cb41-652"></a></span>
+<span id="cb41-653"><a href="#cb41-653"></a><span class="fu">#### Part a {.unnumbered}</span></span>
+<span id="cb41-654"><a href="#cb41-654"></a></span>
+<span id="cb41-655"><a href="#cb41-655"></a><span class="ss">-   </span>6</span>
+<span id="cb41-656"><a href="#cb41-656"></a><span class="ss">-   </span>1 + 1 = 2</span>
+<span id="cb41-657"><a href="#cb41-657"></a></span>
+<span id="cb41-658"><a href="#cb41-658"></a><span class="fu">#### Part b {.unnumbered}</span></span>
+<span id="cb41-659"><a href="#cb41-659"></a></span>
+<span id="cb41-660"><a href="#cb41-660"></a>Elevations range from roughly 3700 to 5500 feet. Elevations vary from hike to hike relatively *normally* (with a bell shape) around a typical elevation of roughly 4500 feet.</span>
+<span id="cb41-661"><a href="#cb41-661"></a></span>
+<span id="cb41-662"><a href="#cb41-662"></a></span>
+<span id="cb41-663"><a href="#cb41-663"></a></span>
+<span id="cb41-664"><a href="#cb41-664"></a><span class="fu">### Exercise 9: Building Histograms - Part 2 {.unnumbered}</span></span>
+<span id="cb41-665"><a href="#cb41-665"></a></span>
+<span id="cb41-668"><a href="#cb41-668"></a><span class="in">```{r}</span></span>
+<span id="cb41-669"><a href="#cb41-669"></a><span class="co"># Add a histogram layer</span></span>
+<span id="cb41-670"><a href="#cb41-670"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-671"><a href="#cb41-671"></a>  <span class="fu">geom_histogram</span>()</span>
+<span id="cb41-672"><a href="#cb41-672"></a></span>
+<span id="cb41-673"><a href="#cb41-673"></a><span class="co"># Outline the bars in white</span></span>
+<span id="cb41-674"><a href="#cb41-674"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-675"><a href="#cb41-675"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) </span>
+<span id="cb41-676"><a href="#cb41-676"></a></span>
+<span id="cb41-677"><a href="#cb41-677"></a><span class="co"># Fill the bars in blue</span></span>
+<span id="cb41-678"><a href="#cb41-678"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-679"><a href="#cb41-679"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">fill =</span> <span class="st">"blue"</span>) </span>
+<span id="cb41-680"><a href="#cb41-680"></a></span>
+<span id="cb41-681"><a href="#cb41-681"></a><span class="co"># Add axis labels</span></span>
+<span id="cb41-682"><a href="#cb41-682"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-683"><a href="#cb41-683"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb41-684"><a href="#cb41-684"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-685"><a href="#cb41-685"></a></span>
+<span id="cb41-686"><a href="#cb41-686"></a><span class="co"># Change the width of the bins to 1000 feet</span></span>
+<span id="cb41-687"><a href="#cb41-687"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-688"><a href="#cb41-688"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">1000</span>) <span class="sc">+</span></span>
+<span id="cb41-689"><a href="#cb41-689"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-690"><a href="#cb41-690"></a></span>
+<span id="cb41-691"><a href="#cb41-691"></a><span class="co"># Change the width of the bins to 5 feet</span></span>
+<span id="cb41-692"><a href="#cb41-692"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-693"><a href="#cb41-693"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb41-694"><a href="#cb41-694"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-695"><a href="#cb41-695"></a></span>
+<span id="cb41-696"><a href="#cb41-696"></a><span class="co"># Change the width of the bins to 200 feet</span></span>
+<span id="cb41-697"><a href="#cb41-697"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-698"><a href="#cb41-698"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>, <span class="at">binwidth =</span> <span class="dv">200</span>) <span class="sc">+</span></span>
+<span id="cb41-699"><a href="#cb41-699"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Elevation (feet)"</span>, <span class="at">y =</span> <span class="st">"Number of hikes"</span>)</span>
+<span id="cb41-700"><a href="#cb41-700"></a><span class="in">```</span></span>
+<span id="cb41-701"><a href="#cb41-701"></a></span>
+<span id="cb41-702"><a href="#cb41-702"></a></span>
+<span id="cb41-703"><a href="#cb41-703"></a><span class="fu">### Exercise 10: Histogram Follow-up {.unnumbered}</span></span>
+<span id="cb41-704"><a href="#cb41-704"></a></span>
+<span id="cb41-705"><a href="#cb41-705"></a><span class="ss">-   </span><span class="in">`geom_histogram()`</span></span>
+<span id="cb41-706"><a href="#cb41-706"></a><span class="ss">-   </span><span class="in">`color`</span> outlined the bars and <span class="in">`fill`</span> filled them</span>
+<span id="cb41-707"><a href="#cb41-707"></a><span class="ss">-   </span>easier to distinguish between the bars</span>
+<span id="cb41-708"><a href="#cb41-708"></a><span class="ss">-   </span>changed the bin width</span>
+<span id="cb41-709"><a href="#cb41-709"></a><span class="ss">-   </span>we lump too many hikes together and lose track of the nuances</span>
+<span id="cb41-710"><a href="#cb41-710"></a><span class="ss">-   </span>we don't lump enough hikes together and lose track of the bigger picture trends</span>
+<span id="cb41-711"><a href="#cb41-711"></a></span>
+<span id="cb41-712"><a href="#cb41-712"></a></span>
+<span id="cb41-713"><a href="#cb41-713"></a><span class="fu">### Exercise 11: Density plots {.unnumbered}</span></span>
+<span id="cb41-714"><a href="#cb41-714"></a></span>
+<span id="cb41-717"><a href="#cb41-717"></a><span class="in">```{r}</span></span>
+<span id="cb41-718"><a href="#cb41-718"></a><span class="fu">ggplot</span>(hikes, <span class="fu">aes</span>(<span class="at">x =</span> elevation)) <span class="sc">+</span></span>
+<span id="cb41-719"><a href="#cb41-719"></a> <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">fill =</span> <span class="st">"orange"</span>)</span>
+<span id="cb41-720"><a href="#cb41-720"></a><span class="in">```</span></span>
+<span id="cb41-721"><a href="#cb41-721"></a></span>
+<span id="cb41-722"><a href="#cb41-722"></a></span>
+<span id="cb41-723"><a href="#cb41-723"></a><span class="fu">### Exercise 13: Code = Communication {.unnumbered}</span></span>
+<span id="cb41-724"><a href="#cb41-724"></a></span>
+<span id="cb41-725"><a href="#cb41-725"></a><span class="ss">-   </span>Clarifies that the subsequent lines are a continuation of the first. That is, we're not done with the plot yet. These lines are all part of the same idea.</span>
+<span id="cb41-726"><a href="#cb41-726"></a><span class="ss">-   </span>This is like a run-on sentence. It's tough to track the distinct steps that go into building the plot.</span>
+<span id="cb41-727"><a href="#cb41-727"></a></span>
+<span id="cb41-728"><a href="#cb41-728"></a></span>
+<span id="cb41-729"><a href="#cb41-729"></a>&lt;/details&gt;</span>
+<span id="cb41-730"><a href="#cb41-730"></a></span>
+<span id="cb41-731"><a href="#cb41-731"></a></span>
+<span id="cb41-732"><a href="#cb41-732"></a></span>
+<span id="cb41-733"><a href="#cb41-733"></a></span>
+<span id="cb41-734"><a href="#cb41-734"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
