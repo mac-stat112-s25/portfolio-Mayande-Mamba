@@ -5,10 +5,4 @@ format: html
 
 
 
-
-```{r}
-knitr::include_graphics("/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/images/Wrangling.png")
-```
-
-
-
+![Wrangling](images/Wrangling.png)

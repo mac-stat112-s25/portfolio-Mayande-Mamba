@@ -63,7 +63,7 @@ fc |>
 
 
 
-# Research question: Which top 5 countries consume each food? 
+**Research question: Which top 5 countries consume each food?** 
 
 
 
@@ -86,7 +86,7 @@ fc |>
 
 
 
-# Research question: What does the consumption of each food look like
+**Research question: What does the consumption of each food look like**
 
 ```{r}
 ne_countries(returnclass = "sf") |>
