@@ -10,3 +10,7 @@ format: html
 knitr::include_graphics("/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/wrangling.png")
 ```
 
+```{r}
+file.exists("summarysheet/Visualization.png")
+```
+
