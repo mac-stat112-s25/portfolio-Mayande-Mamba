@@ -729,7 +729,7 @@
     "href": "summarysheet/Visualization.html",
     "title": "\n20  Visualization\n",
     "section": "",
-    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/Visualization.png\")",
+    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/images/Visualization.png\")",
     "crumbs": [
       "SummarySheets",
       "<span class='chapter-number'>20</span>  <span class='chapter-title'>Visualization</span>"
@@ -740,7 +740,7 @@
     "href": "summarysheet/Wrangling.html",
     "title": "\n21  Wrangling\n",
     "section": "",
-    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/Wrangling.png\")",
+    "text": "Codeknitr::include_graphics(\"/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/images/Wrangling.png\")",
     "crumbs": [
       "SummarySheets",
       "<span class='chapter-number'>21</span>  <span class='chapter-title'>Wrangling</span>"
