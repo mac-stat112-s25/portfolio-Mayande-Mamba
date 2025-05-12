@@ -232,12 +232,12 @@
   {
     "objectID": "ica/ica-effective.html",
     "href": "ica/ica-effective.html",
-    "title": "\n10  ica-effective\n",
+    "title": "\n10  Effective Viz\n",
     "section": "",
-    "text": "Code# Load tidyverse package for plotting and wrangling\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nCode# Import the data\nweather &lt;- read.csv(\"https://mac-stat.github.io/data/weather_3_locations.csv\") |&gt; \n  mutate(date = as.Date(date))\n\n\n\nCode#Make this look professional\nggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point()\n\nWarning: Removed 27 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nCodeggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point() + \n  labs(x = \"9am temperature\", y = \"3pm temperature\", title = \"9am temperature vs 3pm temperature for 3 locations\", color = \"Location\")  \n\nWarning: Removed 27 rows containing missing values or values outside the scale range\n(`geom_point()`).",
+    "text": "Code# Load tidyverse package for plotting and wrangling\nlibrary(tidyverse)\n\n# Import the data\nweather &lt;- read.csv(\"https://mac-stat.github.io/data/weather_3_locations.csv\") |&gt; \n  mutate(date = as.Date(date))\n\n\n\nCode#Make this look professional\nggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point()\n\n\n\n\n\n\n\n\nCodeggplot(weather, aes(y = temp3pm, x = temp9am, color = location)) + \n  geom_point() + \n  labs(x = \"9am temperature\", y = \"3pm temperature\", title = \"9am temperature vs 3pm temperature for 3 locations\", color = \"Location\")",
     "crumbs": [
       "In-class Activities",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>ica-effective</span>"
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Effective Viz</span>"
     ]
   },
   {
