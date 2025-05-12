@@ -56,8 +56,8 @@ book:
       
     - part: "SummarySheets"
       chapters: 
-      - images/Visualization.qmd
-      - images/Wrangling.qmd
+      - summarysheet/Visualization.qmd
+      - summarysheet/Wrangling.qmd
       
     - part: "Solo-Project"
       chapters: 
