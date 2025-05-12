@@ -4,6 +4,6 @@ format: html
 ---
 
 ```{r}
-knitr::include_graphics("/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/Visualization.png")
+knitr::include_graphics("/Users/mayandemamba/Documents/portfolio-Mayande-Mamba/summarysheet/images/Visualization.png")
 ```
 
