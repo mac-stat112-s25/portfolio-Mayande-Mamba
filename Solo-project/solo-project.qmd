@@ -1,9 +1,9 @@
 ---
-title: "solo-project"
+title: "Solo Project"
 format: html
 ---
 
-```{r}
+```{r,echo=FALSE,results="hide",message=FALSE, warning=FALSE}
 # Load the package
 library(rnaturalearth)
 library(rnaturalearthhires)
@@ -11,36 +11,27 @@ library(tidyverse)
 library(leaflet)
 library(sf)
 library(tmap)
-
+library(mapview)
 ```
 
 
+# Project Summary: Mapping Fire Incidents in Australia
+
+For my solo project, I explore the distribution of fire incidents across different regions of Australia using data from [TidyTuesday](https://github.com/rfordatascience/tidytuesday/blob/main/data/2020/2020-01-07/readme.md). The dataset comprises of three CSV files: rainfall data, temperature data, and fire data for Australia and New Zealand. My primary focus is on analyzing the geographic distribution of fires in Australia using a choropleth map. To visualize this effectively, I supplement the TidyTuesday data with spatial boundary data that defines the major regions of Australia.
 
 
 
+Before plotting the map, the fire dataset needed is cleaned and spatially aligned. Specifically, the fire data was transformed to match the coordinate reference system (CRS) of the Australian regional boundaries.
+I aggregated the number of fire incidents per region, creating a new dataset that links each region to its total fire count. This summary data was then joined with the spatial boundaries dataset. 
+
+
+Using the tmap package in R, I created a choropleth map with tm_shape() to visualize the spatial concentration of fires. The map reveals that New South Wales has the highest number of fires, standing out with the darkest fill on the choropleth.Other regions show significantly lower fire counts, often around one or very few incidents. To enhance user interaction and interpretability, I also created an interactive leaflet map. This allows users to hover or click on a region to view its name and fire count, and easily compare fire distribution across regions in a dynamic format.
+
+Overall New South Wales emerges as the region with the highest fire activity.Other regions display relatively low and uniform fire occurrences.The combination of static and interactive maps provides a comprehensive and user friendly view of spatial fire patterns.
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE, results="hide"}
 # Get the Data
 
 rainfall <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2020/2020-01-07/rainfall.csv')
@@ -63,7 +54,6 @@ aus_fires <- sf::st_read(url)
 tuesdata <- tidytuesdayR::tt_load('2020-01-07') 
 tuesdata <- tidytuesdayR::tt_load(2020, week = 2)
 
-
 rainfall <- tuesdata$rainfall
 ```
 
@@ -71,21 +61,18 @@ rainfall <- tuesdata$rainfall
 
 
 
-```{r}
-# Mapping NSW Current Incidents in R -------------------------------------------
+```{r,echo=FALSE, message=FALSE, warning=FALSE, results="hide"}
 
-library(sf)
-library(mapview)
-library(tidyverse)
-
-#' Current Incidents Feed (GeoJSON)
-#' This feed contains a list of current incidents from the NSW RFS, 
-#' and includes location data and Major Fire Update summary information where available. 
-#' Click through from the feed to the NSW RFS website for full details of the update. 
-#' GeoJSON is a lightweight data standard that has emerged to support the sharing of 
-#' information with location or geospatial data. 
-#' It is widely supported by modern applications and mobile devices.
-
+# # Mapping NSW Current Incidents in R -------------------------------------------
+# 
+# #' Current Incidents Feed (GeoJSON)
+# #' This feed contains a list of current incidents from the NSW RFS, 
+# #' and includes location data and Major Fire Update summary information where available. 
+# #' Click through from the feed to the NSW RFS website for full details of the update. 
+# #' GeoJSON is a lightweight data standard that has emerged to support the sharing of 
+# #' information with location or geospatial data. 
+# #' It is widely supported by modern applications and mobile devices.
+# 
 url <- "http://www.rfs.nsw.gov.au/feeds/majorIncidents.json"
 
 fires <- st_read(url)
@@ -97,33 +84,19 @@ st_geometry_type(fires)
 fires <- st_collection_extract(fires, "POINT")
 
 
-mapview(fires)
-
-
-
-
-#' Hacky way to get rid of points within geometry collections
-fire_poly <- fires %>% 
-  st_buffer(dist = 0) %>% 
-  st_union(by_feature = TRUE)
-
-mapview(fire_poly)
-
-fires %>% 
-  mutate(pubdate = as.character(pubDate),
-         pubdate = as.Date(pubdate))
 
 ```
 
 
 
-```{r}
+
+```{r,echo=FALSE}
 # Get Australian states as polygons
 aus_boundaries <- ne_states(country = "Australia", returnclass = "sf")
 ```
 
 
-```{r}
+```{r,echo=FALSE}
 
 # Ensure fire data is in the same CRS (Coordinate Reference System) as the boundaries
 fires <- st_transform(fires, st_crs(aus_boundaries))
@@ -146,10 +119,25 @@ aus_boundaries$fire_count[is.na(aus_boundaries$fire_count)] <- 0
 ```
 
 
-```{r}
+
+
+
+
+```{r, fig.alt= "Chloropleth map showing the distribution of wildfire incidents in Australia",echo=FALSE, message=FALSE, warning=FALSE}
+
 tm_shape(aus_boundaries) +
-  tm_polygons("fire_count", style = "jenks", palette = "Reds", title = "Wildfire Incidents") +
-  tm_layout(title = "Choropleth Map of Wildfire Incidents in Australia")
+  tm_polygons("fire_count", 
+              style = "jenks", 
+              palette = "Reds", 
+              title = "Wildfire Incidents") +
+  tm_layout(
+    title = "Choropleth Map of Wildfire Incidents in Australia",
+    title.position = c("center", "top"),
+    frame = FALSE
+  ) +
+  tm_credits("Source: TidyTuesday | Created by Mayande Mamba | Date: May 1, 2025",
+             position = c("left", "bottom"),
+             size = 0.7)
 
 ```
 
@@ -160,7 +148,7 @@ tm_shape(aus_boundaries) +
 
 
 
-```{r}
+```{r,fig.alt="Map of Australia showing the state and territory boundaries",echo=FALSE}
 # Get high-resolution states/territories data for Australia
 australia_states <- ne_states(returnclass = "sf") %>%
   filter(admin == "Australia")
@@ -171,19 +159,54 @@ australia_states <- ne_states(returnclass = "sf") %>%
 ggplot(australia_states) +
   geom_sf(fill = "lightblue", color = "black") +
   theme_minimal() +
-  labs(title = "Australia and its States/Territories")
+  labs(title = "Australia and its States/Territories",
+       caption = "Source: Natural Earth | Created by Mayande Mamba | Date: May 1, 2025")
 ```
 
-```{r}
-library(rnaturalearth)
-library(sf)
-library(mapview)
 
-# Get admin level 1 (states) just for Australia
-aus_states <- ne_states(country = "Australia", returnclass = "sf")
 
-# View it
-mapview(aus_states)
+
+```{r,fig.alt="Leaflet Map of Australia showing wildfires distributions and count", echo=FALSE}
+
+leaflet(aus_boundaries) |>
+  addProviderTiles("CartoDB.Positron") |>
+  addPolygons(
+    fillColor = ~colorNumeric("Reds", fire_count)(fire_count),  # Color by fire count
+    color = "black", 
+    weight = 1, 
+    opacity = 1,
+    fillOpacity = 0.7,
+    popup = ~paste("State:", name, "<br>", "Fire Count:", fire_count)  # Popup with state and fire count
+  ) |>
+  addLegend(
+    pal = colorNumeric("Reds", aus_boundaries$fire_count), 
+    values = aus_boundaries$fire_count, 
+    title = "Wildfire Count",
+    position = "bottomright"
+  ) |>
+  addControl(
+    html = "<strong>Interactive Map Created by Mayande Mamba,Date Created: May 1, 2025</strong,5><br>", 
+    position = "bottomleft")
+    
+
+```
+
+
+
+
+
+
+
+
+```{r,echo=FALSE}
+#for effective visualization :
+# add alt text 
+#Site source of data, put my name, add date created 
+#fix the labels of the qudartic winner_20 
+
+#Hide the code from my website
+#Publish the website
+#
 
 ```
 

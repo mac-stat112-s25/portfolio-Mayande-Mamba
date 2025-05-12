@@ -1,5 +1,5 @@
 ---
-title: "Exam2"
+title: "Exam 2"
 format: html
 ---
 
@@ -46,24 +46,46 @@ distinct(fc,food_category)
 Research question: Which 5 countries consume the most food?
 
 ```{r}
-fc |> group_by(country) |>
-  summarise(Total_consumption = sum(consumption))|>
-  arrange(desc(Total_consumption))|>
-  head(5) |>
-  ggplot(aes(x=country, fill = Total_consumption)) + geom_bar()
+fc |> 
+  group_by(country) |> 
+  summarise(Total_consumption = sum(consumption)) |> 
+  arrange(desc(Total_consumption)) |> 
+  head(5) |> 
+  ggplot(aes(x = country, y = Total_consumption, fill = country)) + 
+  geom_bar(stat = "identity") +
+  labs(title = "Top 5 Countries by Total Consumption",
+       x = "Country", y = "Total Consumption") +
+  theme_minimal()
+
   
+
 ```
+
+
+
 Research question: Which top 5 countries consume each food? 
 
 
+
 ```{r}
-fc |> select(food_category, country,consumption) |>
-  group_by(food_category) |>
-  slice_max(order_by = consumption,n= 1)|>
-  arrange(desc(consumption)) |>
-  ggplot(aes(x= country, fill = consumption)) + geom_bar() + facet_wrap(~food_category)
-  
+fc |> 
+  select(food_category, country, consumption) |> 
+  group_by(food_category) |> 
+  slice_max(order_by = consumption, n = 5, with_ties = FALSE) |> 
+  ggplot(aes(x = reorder(country, consumption), y = consumption, fill = country)) + 
+  geom_bar(stat = "identity") + 
+  facet_wrap(~food_category, scales = "free") +
+  labs(title = "Top 5 Countries by Consumption per Food Category",
+       x = "Country", y = "Consumption") + 
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
 ```
+
+
+
+
+
 Research question: What does the consumption of each food look like
 
 ```{r}

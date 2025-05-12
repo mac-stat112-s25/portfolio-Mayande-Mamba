@@ -10,7 +10,7 @@ book:
   page-navigation: true
   back-to-top-navigation: true
   bread-crumbs: true
-  
+ 
   
   sidebar:
     title: "Mayande"
@@ -19,7 +19,8 @@ book:
     pinned: true
     search: true
   
-  
+
+ 
   chapters:
     - index.qmd
 
@@ -45,12 +46,18 @@ book:
       - ica/ica-joining.qmd
       - ica/ica-factors.qmd
       - ica/ica-strings.qmd
+      - ica/ica-import.qmd
       
       
     - part: "Exams"
       chapters: 
-      - Exam/Exam1.qmd
-      - Exam/Exam2.qmd
+      - Exam/Exam 1.qmd
+      - Exam/Exam 2.qmd
+      
+    - part: "SummarySheets"
+      chapters: 
+      - summarysheet/Visualization.qmd
+      - summarysheet/Wrangling.qmd
       
     - part: "Solo-Project"
       chapters: 
@@ -62,6 +69,7 @@ book:
 
 format:
   html:
+    code-fold: true
     theme:
       light: flatly
       dark: darkly
@@ -77,6 +85,10 @@ format:
 execute:
   cache: false
   freeze: auto
+  echo: true
+  warning: false
+  error: false
+
 
 editor: 
   markdown:
