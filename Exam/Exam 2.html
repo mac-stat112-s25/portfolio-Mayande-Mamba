@@ -332,8 +332,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+<li><a href="#research-question-which-top-5-countries-consume-each-food" id="toc-research-question-which-top-5-countries-consume-each-food" class="nav-link active" data-scroll-target="#research-question-which-top-5-countries-consume-each-food"><span class="header-section-number">20</span> Research question: Which top 5 countries consume each food?</a></li>
+  <li><a href="#research-question-what-does-the-consumption-of-each-food-look-like" id="toc-research-question-what-does-the-consumption-of-each-food-look-like" class="nav-link" data-scroll-target="#research-question-what-does-the-consumption-of-each-food-look-like"><span class="header-section-number">21</span> Research question: What does the consumption of each food look like</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../Exam/Exam 1.html">Exams</a></li><li class="breadcrumb-item"><a href="../Exam/Exam 2.html"><span class="chapter-number">19</span>&nbsp; <span class="chapter-title">Exam 2</span></a></li></ol></nav><div class="quarto-title">
@@ -452,7 +457,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 11 Nuts         </code></pre>
 </div>
 </div>
-<p>Research question: Which 5 countries consume the most food?</p>
+<p><strong>Research question: Which 5 countries consume the most food?</strong></p>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>fc <span class="sc">|&gt;</span> </span>
 <span id="cb12-2"><a href="#cb12-2"></a>  <span class="fu">group_by</span>(country) <span class="sc">|&gt;</span> </span>
@@ -471,7 +476,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Research question: Which top 5 countries consume each food?</p>
+<section id="research-question-which-top-5-countries-consume-each-food" class="level1" data-number="20"><h1 data-number="20">
+<span class="header-section-number">20</span> Research question: Which top 5 countries consume each food?</h1>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>fc <span class="sc">|&gt;</span> </span>
 <span id="cb13-2"><a href="#cb13-2"></a>  <span class="fu">select</span>(food_category, country, consumption) <span class="sc">|&gt;</span> </span>
@@ -491,7 +497,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>Research question: What does the consumption of each food look like</p>
+</section><section id="research-question-what-does-the-consumption-of-each-food-look-like" class="level1" data-number="21"><h1 data-number="21">
+<span class="header-section-number">21</span> Research question: What does the consumption of each food look like</h1>
 <div class="cell">
 <details class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb14-2"><a href="#cb14-2"></a>  <span class="fu">select</span>(name,geometry) <span class="sc">|&gt;</span></span>
@@ -523,8 +530,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <!-- -->
 
-
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
     const mode = bsSheetEl.getAttribute("data-mode");
@@ -1199,7 +1205,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-55"><a href="#cb15-55"></a><span class="fu">distinct</span>(fc,food_category)</span>
 <span id="cb15-56"><a href="#cb15-56"></a><span class="in">```</span></span>
 <span id="cb15-57"><a href="#cb15-57"></a></span>
-<span id="cb15-58"><a href="#cb15-58"></a>Research question: Which 5 countries consume the most food?</span>
+<span id="cb15-58"><a href="#cb15-58"></a>**Research question: Which 5 countries consume the most food?**</span>
 <span id="cb15-59"><a href="#cb15-59"></a></span>
 <span id="cb15-62"><a href="#cb15-62"></a><span class="in">```{r}</span></span>
 <span id="cb15-63"><a href="#cb15-63"></a>fc <span class="sc">|&gt;</span> </span>
@@ -1219,7 +1225,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-77"><a href="#cb15-77"></a></span>
 <span id="cb15-78"><a href="#cb15-78"></a></span>
 <span id="cb15-79"><a href="#cb15-79"></a></span>
-<span id="cb15-80"><a href="#cb15-80"></a>Research question: Which top 5 countries consume each food? </span>
+<span id="cb15-80"><a href="#cb15-80"></a><span class="fu"># Research question: Which top 5 countries consume each food? </span></span>
 <span id="cb15-81"><a href="#cb15-81"></a></span>
 <span id="cb15-82"><a href="#cb15-82"></a></span>
 <span id="cb15-83"><a href="#cb15-83"></a></span>
@@ -1242,7 +1248,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb15-102"><a href="#cb15-102"></a></span>
 <span id="cb15-103"><a href="#cb15-103"></a></span>
 <span id="cb15-104"><a href="#cb15-104"></a></span>
-<span id="cb15-105"><a href="#cb15-105"></a>Research question: What does the consumption of each food look like</span>
+<span id="cb15-105"><a href="#cb15-105"></a><span class="fu"># Research question: What does the consumption of each food look like</span></span>
 <span id="cb15-106"><a href="#cb15-106"></a></span>
 <span id="cb15-109"><a href="#cb15-109"></a><span class="in">```{r}</span></span>
 <span id="cb15-110"><a href="#cb15-110"></a><span class="fu">ne_countries</span>(<span class="at">returnclass =</span> <span class="st">"sf"</span>) <span class="sc">|&gt;</span></span>
